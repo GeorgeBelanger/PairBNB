@@ -5,13 +5,14 @@
   "dependencies": {
     "apollo-boost": "^0.1.7",
     "bootstrap": "^4.1.1",
+    "express": "^4.16.3",
     "graphcool": "^0.11.6",
     "graphql": "^0.13.2",
-    "express": "^4.16.3",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
-    "react-scripts": "1.1.4",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
