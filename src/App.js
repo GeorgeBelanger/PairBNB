@@ -4,7 +4,10 @@ import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
 import Posts from './posts'
 import './assets/css/main.css'
+import './assets/css/font-awesome.min.css'
 import Listings from './listings'
+import Menu from './menu'
+import { Link } from 'react-router-dom'
 
 const client = new ApolloClient({
   uri: 'https://api.graph.cool/simple/v1/cjhupbfdv1msh0155lkixi5zx'
@@ -20,6 +23,7 @@ const App = () => (
     />
     {/* Wrapper */}
     <div id='wrapper'>
+
       {/* Header */}
       <header id='header' className='alt'>
         <a href='index.html' className='logo' style={{ marginTop: 15 }}>
@@ -35,26 +39,27 @@ const App = () => (
       <nav id='menu'>
         <ul className='links'>
           <li>
-            <a href='index.html'>Home</a>
+            <Link to='/index'>Home</Link>
           </li>
           <li>
-            <a href='landing.html'>Landing</a>
+            <Link to='/viewlistings'>viewlistings</Link>
           </li>
           <li>
-            <a href='generic.html'>Generic</a>
+            <Link to='/generic'>Generic</Link>
           </li>
           <li>
-            <a href='elements.html'>Elements</a>
+            <Link to='/elements'>Elements</Link>
           </li>
         </ul>
         <ul className='actions stacked'>
           <li>
             <a href='#' className='button fit'>
-            Log In
+        Log In
             </a>
           </li>
         </ul>
       </nav>
+
       {/* Banner */}
       <section id='banner' className='major'>
         <div className='inner'>
