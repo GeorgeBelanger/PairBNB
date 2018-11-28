@@ -8,7 +8,6 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -21,10 +20,18 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <body class="is-preload">
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
+
+      <script src="%PUBLIC_URL%/jquery.min.js"></script>
+      <script src="%PUBLIC_URL%/browser.min.js"></script>
+      <script src="%PUBLIC_URL%/breakpoints.min.js"></script>
+      <script src="%PUBLIC_URL%/jquery.scrolly.min.js" defer ></script>
+      <script src="%PUBLIC_URL%/jquery.scrollex.min.js"defer></script>
+      <script src="%PUBLIC_URL%/util.js"defer></script>
+      <script src="%PUBLIC_URL%/main.js"defer></script> 
     <div id="root"></div>
     <!--
       This HTML file is a template.

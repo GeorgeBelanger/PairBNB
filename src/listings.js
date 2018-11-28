@@ -29,7 +29,7 @@ const Listings = () => (
       if (error) return <p>Error :(</p>
 
       return data.allPosts.map((currentListing) => (
-        <Listing listing={currentListing} />
+        <Listing key={currentListing.id.toString()} listing={currentListing} />
       ))
     }}
   </Query>

@@ -1,10 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css'
 import ApolloClient from 'apollo-boost'
 import { ApolloProvider } from 'react-apollo'
-import Posts from './posts'
 import './assets/css/main.css'
 import Listings from './listings'
+import jQuery from 'jquery'
+window.jQuery = jQuery
 
 const client = new ApolloClient({
   uri: 'https://api.graph.cool/simple/v1/cjhupbfdv1msh0155lkixi5zx'
@@ -31,6 +32,7 @@ const App = () => (
           <a href='#menu'>Menu</a>
         </nav>
       </header>
+      {/* End Header */}
       {/* Menu */}
       <nav id='menu'>
         <ul className='links'>
@@ -49,7 +51,7 @@ const App = () => (
         </ul>
         <ul className='actions stacked'>
           <li>
-            <a href='#' className='button fit'>
+            <a href='#!' className='button fit'>
             Log In
             </a>
           </li>
@@ -153,7 +155,7 @@ const App = () => (
               <div className='contact-method'>
                 <span className='icon alt fa-envelope' />
                 <h3>Email</h3>
-                <a href='#'>information@untitled.tld</a>
+                <a href='#!'>information@untitled.tld</a>
               </div>
             </section>
             <section>
@@ -182,27 +184,27 @@ const App = () => (
         <div className='inner'>
           <ul className='icons'>
             <li>
-              <a href='#' className='icon alt fa-twitter'>
+              <a href='#!' className='icon alt fa-twitter'>
                 <span className='label'>Twitter</span>
               </a>
             </li>
             <li>
-              <a href='#' className='icon alt fa-facebook'>
+              <a href='#!' className='icon alt fa-facebook'>
                 <span className='label'>Facebook</span>
               </a>
             </li>
             <li>
-              <a href='#' className='icon alt fa-instagram'>
+              <a href='#!' className='icon alt fa-instagram'>
                 <span className='label'>Instagram</span>
               </a>
             </li>
             <li>
-              <a href='#' className='icon alt fa-github'>
+              <a href='#!' className='icon alt fa-github'>
                 <span className='label'>GitHub</span>
               </a>
             </li>
             <li>
-              <a href='#' className='icon alt fa-linkedin'>
+              <a href='#!' className='icon alt fa-linkedin'>
                 <span className='label'>LinkedIn</span>
               </a>
             </li>
@@ -216,18 +218,6 @@ const App = () => (
         </div>
       </footer>
     </div>
-
-    <ApolloProvider client={client}>
-      <div>
-        <nav className='navbar navbar-dark bg-primary'>
-          <a className='navbar-brand' href='#'><b>PairBNB and friends</b></a>
-        </nav>
-        <div>
-          <Posts />
-        </div>
-      </div>
-    </ApolloProvider>
-
   </div>
 )
 

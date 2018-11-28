@@ -21,10 +21,10 @@ const Posts = () => (
   >
     {({ loading, error, data }) => {
       if (loading) return <p>Loading...</p>
-      if (error) return <p>Error :(</p>
+      if (error) return <p>Error :( most likely not connected to the internet</p>
 
       return data.allPosts.map((currentPost) => (
-        <Post post={currentPost} />
+        <Post key={currentPost.id.toString()} post={currentPost} />
       ))
     }}
   </Query>
