@@ -34,3 +34,6 @@ Another issue seems to be that react isn't handling my css animations correctly.
 
 Next issue is that the correct font isn't loading. The font family is correct when I inspect it. 
 ---I was just misjudging the look of the font, it is actually the correct font but I remember it wasn't when I first started the project.
+
+
+Fixed all the issues I was having with react router except that I can't figure out why when I click the NavLink on my logo it takes me to the home page but doesn't show my transitions but when I click the same NavLink in Menu it shows transitions.
