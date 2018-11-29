@@ -37,3 +37,11 @@ Next issue is that the correct font isn't loading. The font family is correct wh
 
 
 Fixed all the issues I was having with react router except that I can't figure out why when I click the NavLink on my logo it takes me to the home page but doesn't show my transitions but when I click the same NavLink in Menu it shows transitions.
+
+Wednesday 11/28/18
+
+  Today the goal was to get custom routes to work for each of the listings to give them their own info page with react router. I got it to work but I'm not proud of it. Issues I had and how I resolved them:
+    - Getting the parameters to the GQL query
+      - I sent the match parameter to the landing page and from the landing page to the GQL query and into a filter. 
+        -I couldn't find a way to turn this filter on and off after many tries and so I made a second listings component without filter to show all listings.
+    - Putting the apollo client into home and listing page

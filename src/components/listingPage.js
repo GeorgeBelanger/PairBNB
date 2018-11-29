@@ -1,6 +1,13 @@
 import React from 'react'
+import Listings from '../listings'
+import { ApolloProvider } from 'react-apollo'
+import ApolloClient from 'apollo-boost'
 
-const Landing = () => {
+const client = new ApolloClient({
+  uri: 'https://api.graph.cool/simple/v1/cjhupbfdv1msh0155lkixi5zx'
+})
+
+const ListingPage = ({match}) => {
   return (
     <div>
       <title>Landing</title>
@@ -22,13 +29,18 @@ const Landing = () => {
       </section>
       {/* Main */}
       <div id='main'>
+        <ApolloProvider client={client}>
+          <section id='one' className='tiles'>
+            <Listings match={match} />
+          </section>
+        </ApolloProvider>
         {/* One */}
         <section id='one'>
           <div className='inner'>
             <header className='major'>
               <h2>Sed amet aliquam</h2>
             </header>
-            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
+            <p />
           </div>
         </section>
         {/* Two */}
@@ -99,4 +111,4 @@ const Landing = () => {
   )
 }
 
-export default Landing
+export default ListingPage

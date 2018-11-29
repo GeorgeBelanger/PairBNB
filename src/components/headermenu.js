@@ -1,6 +1,5 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import '../assets/css/main.css'
 
 const HeaderMenu = () => {
   return (
@@ -27,9 +26,6 @@ const HeaderMenu = () => {
         <ul className='links'>
           <li>
             <NavLink to='/'>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to='/landing'>Landing</NavLink>
           </li>
           <li>
             <NavLink to='/generic'>Generic</NavLink>

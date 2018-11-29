@@ -3,12 +3,12 @@ import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
 import Listing from './listing'
 
-const Listings = ({match}) => (
+const ListingsHome = () => (
 
   <Query
     query={gql`
       {
-        allPosts (filter: {id: "${match.params.id}"}){
+        allPosts {
           id
           title
           description
@@ -36,4 +36,4 @@ const Listings = ({match}) => (
   </Query>
 )
 
-export default Listings
+export default ListingsHome

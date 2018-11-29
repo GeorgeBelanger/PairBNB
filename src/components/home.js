@@ -1,7 +1,7 @@
 import React from 'react'
 import { ApolloProvider } from 'react-apollo'
 import ApolloClient from 'apollo-boost'
-import Listings from '../listings'
+import ListingsHome from '../listingsHome'
 
 const client = new ApolloClient({
   uri: 'https://api.graph.cool/simple/v1/cjhupbfdv1msh0155lkixi5zx'
@@ -37,7 +37,7 @@ const Home = () => {
         {/* One */}
         <ApolloProvider client={client}>
           <section id='one' className='tiles'>
-            <Listings />
+            <ListingsHome />
           </section>
         </ApolloProvider>
         {/* Two */}

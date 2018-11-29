@@ -6,7 +6,7 @@ import Contact from './components/contact'
 import Footer from './components/footer'
 import Home from './components/home'
 import Generic from './components/generic'
-import Landing from './components/landing'
+import ListingPage from './components/listingPage'
 import Error from './components/Error'
 import jQuery from 'jquery'
 window.jQuery = jQuery
@@ -20,7 +20,7 @@ class App extends Component {
           <Switch>
             <Route path='/' component={Home} exact />
             <Route path='/generic' component={Generic} />
-            <Route path='/landing' component={Landing} />
+            <Route path='/listingPage/:id' component={ListingPage} />
             <Route component={Error} />
           </Switch>
           <Contact />
