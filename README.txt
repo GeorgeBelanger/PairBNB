@@ -31,7 +31,7 @@ Tuesday 11/27/18
 Another issue seems to be that react isn't handling my css animations correctly. The attributes of the transitions are loading as shown in the styles tab, but the transitions are not occuring. 
   I have tried putting the transitions directly into the public index.html file and it is showing stange behavior: it will apply the styles but the transitions still do not occur and only show the end result.
     This makes me think that the issue is that react is showing the changes automatically and not allowing the transition period to take place. 
-    ---The issue was that the body tag was missing class 'is-preload' and some functions in main.js required it to do transitions. Took 4ish or more hours to add a class. That will happen. 
+    ---The issue was that the body tag was missing class 'is-preload' and some functions in main.js required it to do transitions. Took 4ish or more hours to add a class to a div. That will happen. 
 
 Next issue is that the correct font isn't loading. The font family is correct when I inspect it. 
 ---I was just misjudging the look of the font, it is actually the correct font but I remember it wasn't when I first started the project.
@@ -54,9 +54,25 @@ Today I am going to input the listing data on my graphql server.
 I have to come up with a way to alternate between expensive listing for N dollars per night to inexpensive listing for N dollars per night.   
   - I made the boolean prop for listings, expensiveLocation. I could have 2 seperate columns and change the logic for the colors, but then on mobile it will be expensive listings then inexpensive listings.
   - Another solution is to sort the query by price and alternate between expensive and inexpensive locations, but I'm not sure how to do the alternating. I am going to look more into map and filter. 
-    --- Filtering the price sorted query into expensive locations and inexpensive locations and then using a zipper function to combine them into one array works but.
+    --- Filtering the price sorted query into expensive locations and inexpensive locations and then using a zipper function to combine them into one array works but-
       - This wouldn't work if there were more expensive or inexpensive listings of a certain price, it would throw all the pairs off so it is not robust. 
         - A way I'm thinking of fixing this is to group all the listings of a certain price together and then if amount of expensive listings != inexpensive listings at that price, omit the higher listings until the higher amount equals the lower amount
           - Found a way to omit the higher number of listings until they'r even, but don't know an elegant way to group them by price, and even then users might be unhappy when they don't see their listing up. The zipper could definitely mess this up though so another option is to skip the pairing all together, or create a listing structure that requires 2 entries. I think that is the best way. 
 -Side note I want to reduce the color filter opacity on the listings on mobile because they don't have a chance to hover over the listings. Also change the fade in-out to feel more like an app than a website.
 - Going to change my schema to have two listings per listing. This way they will always be paired on expensive and non-expensive. But the price will be the same. I will just duplicate the values for each listing in the schema and duplicate the JSX in my listings component. 
+
+Friday 11/30/18
+
+- Today I have been thinking of the best way to structure my database. 
+  - (Poor) Having two listings per listing instance
+  - (Better) Having a pairedListingID property on each listing
+  - (Best) Keeping the schema the same and having logic that pairs the listings based on exp/inexp & price, so that you don't always have the same two listings paired.
+- The only reason for doing this is so user generated data doesn't get messed up, but now I'm thinking of having logic so you just put in the url of a listing and it fills all the form data out.
+  - A couple ways of that I can think to do this.
+    - Airbnb's API is only for hosts, so no option there
+    - (Good)This article talks about a hidden api that allows you to collect data for a given listing (https://futuretravel.today/my-journey-on-using-the-hidden-airbnb-api-and-writing-my-first-electron-application-34c9dfabbc65)
+    - (Better)Getting a web crawler to work.  
+      - This article teaching about cheerio.js, puppeteer and request-promise seems like a good starting point after looking at several other options, but the main thing I need is that the feature fires as soon as someone puts the url into the form. (https://medium.freecodecamp.org/the-ultimate-guide-to-web-scraping-with-node-js-daa2027dcd3)
+- Also decided to add security to my variables at this point- should have done it earlier because now I have to delete sensitive files in previous versions. 
+  --- Had an issue with dotenv not working, had to run npm build and now it works.
+ 

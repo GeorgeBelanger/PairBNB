@@ -13,9 +13,9 @@ const Listings = ({match}) => (
           title
           description
           url
-          imageUrl
+          displayImageUrl
           price
-          bedrooms
+          beds
           location
           expensiveLocation
           author{

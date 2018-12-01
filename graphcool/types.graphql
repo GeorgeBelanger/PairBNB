@@ -4,11 +4,16 @@ type Post @model {
    title: String!
    description: String
    url: String
-   imageUrl: String
+   displayImageUrl: String
+   additionalImagesUrls: [String!] 
+   languages: [String!]
    price: Int
-   bedrooms: Int
+   beds: Int
+   baths: Int
+   reviewRating: Float
    location: String
    expensiveLocation: Boolean
+
    author: User! @relation(name: "UserPosts")
 }
 
@@ -16,5 +21,6 @@ type User @model {
   dateOfBirth: DateTime
   id: ID! @isUnique
   name: String
+  admin: Boolean
   posts: [Post!]! @relation(name: "UserPosts")
 }

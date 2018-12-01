@@ -1,5 +1,5 @@
 
 targets:
   dev: local/cjhtmnqdc00040147el4ijzx5
-  globe: shared-us-west-2/cjhupbfdv1msh0155lkixi5zx
+  globe: shared-us-west-2/process.env.REACT_APP_DATABASE_ADDRESS
   default: globe

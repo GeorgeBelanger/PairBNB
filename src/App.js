@@ -9,6 +9,7 @@ import Generic from './components/generic'
 import ListingPage from './components/listingPage'
 import Error from './components/Error'
 import jQuery from 'jquery'
+require('dotenv').config()
 window.jQuery = jQuery
 
 class App extends Component {

@@ -1,6 +1,17 @@
 const express = require('express')
 const app = new express()
 const fs = require('fs')
+const rp = require('request-promise')
+const url = 'https://www.airbnb.com/rooms/2238472'
+
+rp(url)
+  .then(function (html) {
+    // success!
+    console.log(html)
+  })
+  .catch(function (err) {
+    // handle error
+  })
 
 let index = fs.readFileSync(__dirname + '/index.html')
 
