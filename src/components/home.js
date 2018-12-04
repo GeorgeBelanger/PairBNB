@@ -4,7 +4,7 @@ import ApolloClient from 'apollo-boost'
 import ListingsHome from '../listingsHome'
 
 const client = new ApolloClient({
-  uri: process.env.REACT_APP_APOLLO_URI
+  uri: 'https://api.graph.cool/simple/v1/cjhupbfdv1msh0155lkixi5zx'
 })
 
 const Home = () => {
