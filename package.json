@@ -1,6 +1,9 @@
 {
   "name": "api",
   "version": "1.0.0",
+  "engines":{
+    "node": "9.3.0"
+  },
   "description": "My Graphcool Service",
   "dependencies": {
     "apollo-boost": "^0.1.7",
