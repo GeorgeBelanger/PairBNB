@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>
+    <React.Fragment>
       {/* Contact */}
       <section id='contact'>
         <div className='inner'>
@@ -46,14 +46,14 @@ const Contact = () => {
               <div className='contact-method'>
                 <span className='icon alt fa-envelope' />
                 <h3>Email</h3>
-                <a href='#!'>information@untitled.tld</a>
+                <a href='mailto:realtorgeorgeb@gmail.com?subject=PairBNB blew my mind :O'>realtorgeorgeb@gmail.com</a>
               </div>
             </section>
             <section>
               <div className='contact-method'>
                 <span className='icon alt fa-phone' />
                 <h3>Phone</h3>
-                <span>(000) 000-0000 x12387</span>
+                <a href='tel:2075723632'>(207) 572-3632</a>
               </div>
             </section>
             <section>
@@ -61,8 +61,8 @@ const Contact = () => {
                 <span className='icon alt fa-home' />
                 <h3>Address</h3>
                 <span>
-              1234 Somewhere Road #5432<br />
-              Nashville, TN 00000<br />
+              1234 Somewhere Road<br />
+              Windham, ME 04062<br />
               United States of America
                 </span>
               </div>
@@ -70,7 +70,7 @@ const Contact = () => {
           </section>
         </div>
       </section>
-    </div>
+    </React.Fragment>
   )
 }
 

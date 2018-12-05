@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const HeaderMenu = () => {
   return (
-    <div>
+    <React.Fragment>
       {/* Header */}
       <meta charSet='utf-8' />
       <meta
@@ -40,7 +40,7 @@ const HeaderMenu = () => {
         </ul>
       </nav>
       {/* End Menu */}
-    </div>
+    </React.Fragment>
   )
 }
 

@@ -1,18 +1,16 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
 const Listing = (props) => (
-  <article>
-    <span className='image'>
-      <img src={props.listing.displayImageUrl} alt='' />
-    </span>
+  <article id={props.listing.price} className='image' style={{ backgroundImage: `url(${props.listing.displayImageUrl})`}}>
     <header className='major'>
-      <h3><NavLink to={`/listingPage/${props.listing.id}`} className='link'>{props.listing.title} ${props.listing.price}/night</NavLink></h3>
+      <h3><a href={props.listing.url} rel='noopener noreferrer' target='_blank' className='link'>{props.listing.title} ${props.listing.price}/night</a></h3>
       <p><b>{props.listing.location} {props.listing.beds} Beds</b> <br />
         {props.listing.description}
       </p>
     </header>
   </article>
+  // import { NavLink } from 'react-router-dom'
+  // NavLink to={`/listingPage/${props.listing.id}`}
 )
 
 export default Listing

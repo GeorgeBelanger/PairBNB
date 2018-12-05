@@ -2255,6 +2255,7 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		flex-wrap: wrap;
 		cursor: default;
 		list-style: none;
 		margin-left: -1em;
@@ -2262,7 +2263,7 @@ input, select, textarea {
 	}
 
 		ul.actions li {
-			padding: 0 0 0 1em;
+			padding: 1em 0 0 1em;
 			vertical-align: middle;
 		}
 
@@ -2771,7 +2772,7 @@ input, select, textarea {
 				display: block;
 				height: 100%;
 				left: 0;
-				opacity: 0.85;
+				opacity: 0.75;
 				position: absolute;
 				width: 100%;
 				z-index: 2;
@@ -3741,7 +3742,7 @@ input, select, textarea {
 			opacity: 0;
 		}
 
-		#wrapper > * > * > .inner {
+		.inner {
 			padding: 4em 0 2em 0 ;
 			margin: 0 auto;
 			max-width: 65em;
@@ -3750,7 +3751,7 @@ input, select, textarea {
 
 			@media screen and (max-width: 736px) {
 
-				#wrapper > * > .inner {
+				.inner {
 					padding: 3em 0 1em 0 ;
 					width: calc(100% - 3em);
 				}

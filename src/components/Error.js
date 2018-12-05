@@ -2,9 +2,9 @@ import React from 'react'
 
 const Error = () => {
   return (
-    <div>
+    <React.Fragment>
       <p>Whoops, path does not exist. 404</p>
-    </div>
+    </React.Fragment>
   )
 }
 

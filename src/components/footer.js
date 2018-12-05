@@ -2,33 +2,28 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
+    <React.Fragment>
       {/* Footer */}
       <footer id='footer'>
         <div className='inner'>
           <ul className='icons'>
             <li>
-              <a href='#!' className='icon alt fa-twitter'>
-                <span className='label'>Twitter</span>
-              </a>
-            </li>
-            <li>
-              <a href='#!' className='icon alt fa-facebook'>
+              <a href='https://www.facebook.com/george.m.belanger' className='icon alt fa-facebook'>
                 <span className='label'>Facebook</span>
               </a>
             </li>
             <li>
-              <a href='#!' className='icon alt fa-instagram'>
+              <a href='https://www.instagram.com/georgebelanger2/' className='icon alt fa-instagram'>
                 <span className='label'>Instagram</span>
               </a>
             </li>
             <li>
-              <a href='#!' className='icon alt fa-github'>
+              <a href='https://github.com/GeorgeBelanger' className='icon alt fa-github'>
                 <span className='label'>GitHub</span>
               </a>
             </li>
             <li>
-              <a href='#!' className='icon alt fa-linkedin'>
+              <a href='https://www.linkedin.com/in/realtorgeorgeb/' className='icon alt fa-linkedin'>
                 <span className='label'>LinkedIn</span>
               </a>
             </li>
@@ -36,12 +31,12 @@ const Footer = () => {
           <ul className='copyright'>
             <li>© Untitled</li>
             <li>
-          Design: <a href='https://html5up.net'>HTML5 UP</a>
+              <a href='www.georgebelanger.com'>George Belanger</a>
             </li>
           </ul>
         </div>
       </footer>
-    </div>
+    </React.Fragment>
   )
 }
 

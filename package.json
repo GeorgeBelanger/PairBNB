@@ -1,23 +1,26 @@
 {
   "name": "api",
   "version": "1.0.0",
+  "engines":{
+    "node": "9.3.0",
+    "npm": "6.1.0"
+  },
   "description": "My Graphcool Service",
   "dependencies": {
     "apollo-boost": "^0.1.7",
     "bootstrap": "^4.1.1",
-    "cheerio": "^1.0.0-rc.2",
+    "classnames": "2.2.6",
+    "dotenv": "^6.1.0",
     "express": "^4.16.3",
     "graphcool": "^0.11.6",
     "graphql": "^0.13.2",
     "jquery": "^3.3.1",
     "node-sass-chokidar": "^1.3.4",
-    "puppeteer": "^1.11.0",
     "react": "^16.4.0",
     "react-apollo": "^2.1.4",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
-    "request-promise": "^4.2.2"
+    "react-scripts": "1.1.4"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import React from 'react'
+import { BrowserRouter, Route} from 'react-router-dom'
 import './assets/css/main.css'
 import HeaderMenu from './components/headerMenu'
 import Contact from './components/contact'
@@ -9,27 +9,35 @@ import Generic from './components/generic'
 import ListingPage from './components/listingPage'
 import Error from './components/Error'
 import jQuery from 'jquery'
+import SwitchWithSlide from './obnoxious-demo-for-react-router-animation-blog-post/src/SwitchWithSlide'
+
 require('dotenv').config()
 window.jQuery = jQuery
 
-class App extends Component {
+class Container extends React.Component {
   render () {
     return (
-      <BrowserRouter>
-        <div id='wrapper'>
+      <React.Fragment>
+        <div id='wrapper' className='container'>
           <HeaderMenu />
-          <Switch>
+          <SwitchWithSlide>
             <Route path='/' component={Home} exact />
             <Route path='/generic' component={Generic} />
             <Route path='/listingPage/:id' component={ListingPage} />
             <Route component={Error} />
-          </Switch>
+          </SwitchWithSlide>
           <Contact />
           <Footer />
         </div>
-      </BrowserRouter>
+      </React.Fragment>
     )
   }
 };
+
+const App = () => (
+  <BrowserRouter>
+    <Container />
+  </BrowserRouter>
+)
 
 export default App

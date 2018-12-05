@@ -9,7 +9,7 @@ const client = new ApolloClient({
 
 const ListingPage = ({match}) => {
   return (
-    <div>
+    <React.Fragment>
       <title>Landing</title>
       {/* Banner */}
       {/* Note: The "styleN" class below should match that of the header element. */}
@@ -107,7 +107,7 @@ const ListingPage = ({match}) => {
           </div>
         </section>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 

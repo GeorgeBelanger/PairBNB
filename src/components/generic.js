@@ -2,7 +2,7 @@ import React from 'react'
 
 const Generic = () => {
   return (
-    <div>
+    <React.Fragment>
       <title>Generic</title>
       {/* Main */}
       <div id='main' className='alt'>
@@ -12,8 +12,9 @@ const Generic = () => {
             <header className='major'>
               <h1>Generic</h1>
             </header>
+            <h2> Hope you liked the sliding transition. I am still working on a landing page for the listings! Atleast no console log errors :)</h2>
             <span className='image main'>
-              <img src='images/pic11.jpg' alt='alt image5' />
+              <img src='./24219235.jpg' alt='alt image5' />
             </span>
             <p>
             Donec eget ex magna. Interdum et malesuada fames ac ante ipsum
@@ -51,7 +52,7 @@ const Generic = () => {
           </div>
         </section>
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 
