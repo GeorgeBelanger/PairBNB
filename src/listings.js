@@ -17,6 +17,9 @@ const Listings = ({match}) => (
           price
           beds
           location
+          baths
+          reviewRating
+          languages
           expensiveLocation
           author{
             name

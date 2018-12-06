@@ -129,3 +129,12 @@ Friday 11/30/18
     --- Just had to add property flex-wrap: wrap;
   - Looking at getting a Google flight api interface on my landing page for the listings but it's been deprecated and skyscanner is said to be better (https://rapidapi.com/skyscanner/api/skyscanner-flight-search)
   - Was going to hold off on pushing my updates until I have a way to get my transitons to work flawlessly but I like the slider. 
+
+- Wednesday 12/5/18 
+  - Actuallying filling out the listing data today! Putting some font awesome icons in as well.
+    - Changed my baths from int to float
+    - Edited my listings query to include baths
+  - I want to figure out how to get the line after the price and the title to be the same height on both listings even if one of the listings has a longer title. 
+    - First thought is to set the line height of everything below the title and give the title it's own line height that allows for 2 rows and after those 2 rows the overflow gets cut. But first lets fill the listings in. 
+    - Flexbox pattern?
+  - I notice something weird going on with the first two listings, that the opacity of the color shade is very low. Also think that having the better listing always in the big box is better. To do that I would have to edit the zipper, and the easiest way I can think to do that is to have the linked listings in the DB. 

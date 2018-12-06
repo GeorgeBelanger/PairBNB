@@ -2772,7 +2772,7 @@ input, select, textarea {
 				display: block;
 				height: 100%;
 				left: 0;
-				opacity: 0.75;
+				opacity: .75;
 				position: absolute;
 				width: 100%;
 				z-index: 2;

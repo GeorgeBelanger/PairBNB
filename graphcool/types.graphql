@@ -9,7 +9,7 @@ type Post @model {
    languages: [String!]
    price: Int
    beds: Int
-   baths: Int
+   baths: Float
    reviewRating: Float
    location: String
    expensiveLocation: Boolean
