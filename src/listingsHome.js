@@ -8,7 +8,7 @@ const ListingsHome = () => (
   <Query
     query={gql`
       {
-        allPosts {
+        allPosts(orderBy:price_DESC){
           id
           title
           description
