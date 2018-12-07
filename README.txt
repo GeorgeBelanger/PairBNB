@@ -137,4 +137,5 @@ Friday 11/30/18
   - I want to figure out how to get the line after the price and the title to be the same height on both listings even if one of the listings has a longer title. 
     - First thought is to set the line height of everything below the title and give the title it's own line height that allows for 2 rows and after those 2 rows the overflow gets cut. But first lets fill the listings in. 
     - Flexbox pattern?
-  - I notice something weird going on with the first two listings, that the opacity of the color shade is very low. Also think that having the better listing always in the big box is better. To do that I would have to edit the zipper, and the easiest way I can think to do that is to have the linked listings in the DB. 
+  - I notice something weird going on with the first two listings, that the opacity of the color shade is very low. Also think that having the better listing always in the big box is better. To do that I would have to edit the zipper, and the easiest way I can think to do that is to have the linked listings in the DB.
+    - Zipper with two 'teeth' at a time and a first and last conditional is actually the easiest.  

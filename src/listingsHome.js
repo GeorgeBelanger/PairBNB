@@ -38,13 +38,15 @@ const ListingsHome = () => (
       const inexpensiveListings = data.allPosts
         .filter(listing => listing.expensiveLocation === false)
 
-      // zipper function to pair them
-      const pairedListings = []
-      for (var i = 0; i < expensiveListings.length; i++) {
-        pairedListings.push(expensiveListings[i], inexpensiveListings[i])
+      // zipper function to pair them 2 at a time(starting and ending values included) and remove the undefined listings
+      const pairedListings = [expensiveListings[0]]
+      for (var i = 0; i < expensiveListings.length; i += 2) {
+        pairedListings.push(inexpensiveListings[i], inexpensiveListings[i + 1], expensiveListings[i + 1], expensiveListings[i + 2])
       }
+      pairedListings.push(inexpensiveListings[-1])
+      const result = pairedListings.filter(listing => listing !== undefined)
 
-      return pairedListings.map((currentListing) => (
+      return result.map((currentListing) => (
         <Listing key={currentListing.id.toString()} listing={currentListing} />
       ))
     }}
