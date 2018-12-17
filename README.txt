@@ -139,3 +139,26 @@ Friday 11/30/18
     - Flexbox pattern?
   - I notice something weird going on with the first two listings, that the opacity of the color shade is very low. Also think that having the better listing always in the big box is better. To do that I would have to edit the zipper, and the easiest way I can think to do that is to have the linked listings in the DB.
     - Zipper with two 'teeth' at a time and a first and last conditional is actually the easiest.  
+
+- Thursday 12/6/18 
+  - Changed the banner image and image on the generic page. But they need to be shrunk and/or optimized because they are too big rn. 
+
+- Did nothing really on friday and saturday. Not sure what I did on Thursday.
+
+- Sunday 12/9/18
+  - Made a list of the best cities for devs by dividing salary by cost of living. Omaha, Austin and Portland Or seems to be my top 3. 
+  - Couple of things I'm looking at doing rn.
+    - Changing the transition to react hooks and making a repo of it with a slide, fade and maybe another transition. 
+    - Starting my words app
+      - Issue I was having here was that I'm not sure what the best way to do user auth is.
+        - (bad) I can use pure graphql but there is no abiliy to to use oauth(FB n google login)
+        - I can use passport JS with express but there doesn't seem to be a guide on how to use it with create-react-app
+          - This seems to be what I was looking for(https://hackernoon.com/m-e-r-n-stack-application-using-passport-for-authentication-920b1140a134)
+            - This also looked good but the first one starts with create-react-app(https://codeburst.io/react-authentication-with-twitter-google-facebook-and-github-862d59583105)
+          - Now I have to find a template/project that fits my needs for my words app. I will be looking on a few sites: (
+            - https://www.gatsbyjs.org/starters/?v=2
+            - https://react-md.mlaursen.com/
+            - https://react.rocks/)
+          - As for what the final poster will look like, I found two that I like- (
+            - https://www.amazon.com/Mixology-Cocktail-Recipe-Chart-Poster/dp/B003B6N458
+            - https://popchart.co/products/the-cocktail-chart-of-film-literature?variant=1009031284&gclid=CjwKCAiAl7PgBRBWEiwAzFhmmuSLUSOsUoF67PjKgEYkOxKRiknC_nWQIR1jGSXvZN__XrZKMm5gvRoCYkYQAvD_BwE)
