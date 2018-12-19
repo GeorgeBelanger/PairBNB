@@ -92,13 +92,14 @@
   // Fix: Enable IE-only tweaks.
   if (browser.name == 'ie' || browser.name == 'edge') { $body.addClass('is-ie') }
 
-  // Scrolly.
+  // Scrolly. Had to change it so it reloaded after the page changed. 
+document.addEventListener("mouseover", function(){ 
   $('.scrolly').scrolly({
     offset: function () {
       return $header.height() - 2
     }
   })
-
+})
   // Tiles.
   var $tiles = $('.tiles > article')
 

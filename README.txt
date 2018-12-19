@@ -1,17 +1,3 @@
-
-Notes for my ruby on rails PairBNB
-
-create the hamburger menu
-
-put create listing in the menu and have it become a lightbox with escape working
-
-put login in the menu
-
-steal the edit profile page from healfly
-
-have the listings paginate 2 at a time
-
-
 Monday 11/26/18
 
 The order that the javascripts are loading is causing an issue: one is that the routes get messed up if they don't load correctly and when you click the menu it brings you to your current address with #menu on the end and doesn't display the menu.
@@ -162,3 +148,22 @@ Friday 11/30/18
           - As for what the final poster will look like, I found two that I like- (
             - https://www.amazon.com/Mixology-Cocktail-Recipe-Chart-Poster/dp/B003B6N458
             - https://popchart.co/products/the-cocktail-chart-of-film-literature?variant=1009031284&gclid=CjwKCAiAl7PgBRBWEiwAzFhmmuSLUSOsUoF67PjKgEYkOxKRiknC_nWQIR1jGSXvZN__XrZKMm5gvRoCYkYQAvD_BwE)
+
+Tuesday 12/18/2018
+- Couple of things I can think of doing today but first of all where are all my notes?!?:
+  - Sperry Farms
+    - Get a react router running for smooth transitions and change the banner
+      - The latter is better to do while I'm home and the former I need a different transition than just the slide. 
+  - PairBNB
+    - Get a landing page for the listings
+    - blahhh
+    - fix the sf listing
+    - infinite scroll
+  - wordsapp
+    - work on prisma and docker
+    - Work on the react transition (would help with the other two projects)
+    - Work on the UI
+  - Portfolio site
+    - start :p
+  - ecommerce site
+    - start :[]

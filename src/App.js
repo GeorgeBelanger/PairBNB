@@ -5,7 +5,7 @@ import HeaderMenu from './components/headerMenu'
 import Contact from './components/contact'
 import Footer from './components/footer'
 import Home from './components/home'
-import Generic from './components/generic'
+import About from './components/about'
 import ListingPage from './components/listingPage'
 import Error from './components/Error'
 import jQuery from 'jquery'
@@ -22,7 +22,7 @@ class Container extends React.Component {
           <HeaderMenu />
           <SwitchWithSlide>
             <Route path='/' component={Home} exact />
-            <Route path='/generic' component={Generic} />
+            <Route path='/about' component={About} />
             <Route path='/listingPage/:id' component={ListingPage} />
             <Route component={Error} />
           </SwitchWithSlide>

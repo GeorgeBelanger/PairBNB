@@ -93,11 +93,13 @@
   if (browser.name == 'ie' || browser.name == 'edge') { $body.addClass('is-ie') }
 
   // Scrolly.
+document.addEventListener("DOMContentLoaded", function(){ 
   $('.scrolly').scrolly({
     offset: function () {
       return $header.height() - 2
     }
   })
+})
 
   // Tiles.
   var $tiles = $('.tiles > article')
