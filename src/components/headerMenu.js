@@ -11,7 +11,7 @@ const HeaderMenu = () => {
         content='width=device-width, initial-scale=1, user-scalable=no'
       />
       <header id='header' className='alt'>
-        <NavLink to='/' className='logo' style={{ marginTop: 15 }}>
+        <NavLink to='/' className='logo'>
           <h3>
             <strong>PairBNB</strong>
           </h3>
