@@ -18,6 +18,12 @@
 .animatable.prepare.from.right {
   transform: translateX(110%);
 }
+.animatable.prepare.fade.out {
+  transform: translateX(-50%);
+}
+.animatable.prepare.fade.in {
+  transform: translateX(1px);
+}
 .animatable.prepare.to.left {
   transform: translateX(-1px);
 }
@@ -33,6 +39,12 @@
 }
 .animatable:not(.prepare).to.right {
   transform: translateX(110%);
+}
+.animatable:not(.prepare).fade.in {
+  transform: translateX(50%);
+}
+.animatable:not(.prepare).fade.out {
+  transform: translateX(-1px);
 }
 .animatable:not(.prepare).from {
   transform: translateX(0);

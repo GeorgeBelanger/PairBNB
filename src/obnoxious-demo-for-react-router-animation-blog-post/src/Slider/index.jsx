@@ -38,9 +38,10 @@ export default class Slider extends React.Component {
 
   startAnimation(position, animationCallback) {
     const noAnimate = position === Slider.CENTER;
-    const animatingOut = [Slider.TO_LEFT, Slider.TO_RIGHT].includes(position);
+    const animatingOut = [Slider.TO_LEFT, Slider.TO_RIGHT, Slider.FADE_OUT].includes(position);
     const currentlyIn = [
       Slider.CENTER,
+      Slider.FADE_IN,
       Slider.FROM_LEFT,
       Slider.FROM_RIGHT
     ].includes(this.state.position);
@@ -107,6 +108,15 @@ export default class Slider extends React.Component {
           "left": [Slider.TO_LEFT, Slider.FROM_LEFT].includes(
             this.state.position
           ),
+          "fade": [Slider.FADE_OUT, Slider.FADE_IN].includes(
+            this.state.position
+          ),
+          "in": [Slider.FADE_IN].includes(
+            this.state.position
+          ),
+          "out": [Slider.FADE_OUT].includes(
+            this.state.position
+          ),
           "prepare": this.state.animatePrepare
         })}
         data-qa-loading={Boolean(
@@ -124,3 +134,5 @@ Slider.TO_LEFT = "TO_LEFT";
 Slider.TO_RIGHT = "TO_RIGHT";
 Slider.FROM_LEFT = "FROM_LEFT";
 Slider.FROM_RIGHT = "FROM_RIGHT";
+Slider.FADE_OUT = "FADE_OUT";
+Slider.FADE_IN = "FADE_IN";
