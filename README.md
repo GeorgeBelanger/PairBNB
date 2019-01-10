@@ -1,4 +1,11 @@
-Monday 11/26/18
+# PairBNB: Your AirBNB Budget Across the World
+**The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price, but one is amazing and the other is questionable.   **
+
+The technologies I used are Node.JS, React, 
+
+Below is a development log
+
+## Monday 11/26/18
 
 The order that the javascripts are loading is causing an issue: one is that the routes get messed up if they don't load correctly and when you click the menu it brings you to your current address with #menu on the end and doesn't display the menu.
   To fix the javascript loading issue, my first thought was to put the script tags on the index.html in the public folder instead of importing them in app.js and put the js files in the public folder as well. 
@@ -12,7 +19,7 @@ The order that the javascripts are loading is causing an issue: one is that the 
 
 
 
-Tuesday 11/27/18
+## Tuesday 11/27/18
 
 Another issue seems to be that react isn't handling my css animations correctly. The attributes of the transitions are loading as shown in the styles tab, but the transitions are not occuring. 
   I have tried putting the transitions directly into the public index.html file and it is showing stange behavior: it will apply the styles but the transitions still do not occur and only show the end result.
@@ -25,7 +32,7 @@ Next issue is that the correct font isn't loading. The font family is correct wh
 
 Fixed all the issues I was having with react router except that I can't figure out why when I click the NavLink on my logo it takes me to the home page but doesn't show my transitions but when I click the same NavLink in Menu it shows transitions.
 
-Wednesday 11/28/18
+## Wednesday 11/28/18
 
   Today the goal was to get custom routes to work for each of the listings to give them their own info page with react router. I got it to work but I'm not proud of it. Issues I had and how I resolved them:
     - Getting the parameters to the GQL query
@@ -33,7 +40,7 @@ Wednesday 11/28/18
         -I couldn't find a way to turn this filter on and off after many tries and so I made a second listings component without filter to show all listings.
     - Putting the apollo client into home and listing page
 
-Thursday 11/29/18
+## Thursday 11/29/18
 
 Today I am going to input the listing data on my graphql server. 
   -One issue that's confusing me is why when I ask the server to return a description with the other properties, the order of the data returned gets mixed up.
@@ -47,7 +54,7 @@ I have to come up with a way to alternate between expensive listing for N dollar
 -Side note I want to reduce the color filter opacity on the listings on mobile because they don't have a chance to hover over the listings. Also change the fade in-out to feel more like an app than a website.
 - Going to change my schema to have two listings per listing. This way they will always be paired on expensive and non-expensive. But the price will be the same. I will just duplicate the values for each listing in the schema and duplicate the JSX in my listings component. 
 
-Friday 11/30/18
+## Friday 11/30/18
 
 - Today I have been thinking of the best way to structure my database. 
   - (Poor) Having two listings per listing instance
@@ -65,7 +72,7 @@ Friday 11/30/18
   ---Finally realized how to gitignore node_modules/** and also had to do a --soft reset. Love git!  
 
 
-- Saturday 12/1/18
+## Saturday 12/1/18
 
 - Thinking about next steps, few things that I can be doing
   - Filling out my listing data
@@ -91,7 +98,7 @@ Friday 11/30/18
       --- Getting rid of all the stopdefault code got the menu links to behave just like the other links. 
     - Now I have to find out how to get the transitions to appear and add a timeout, fadeout and fade in
       - This article seems promising (https://medium.com/onfido-tech/animations-with-react-router-8e97222e25e1)
-- Sunday 12/2/18 
+## Sunday 12/2/18 
   - A few different things I could be doing today:
     - Watching the talk on hooks (https://reactjs.org/docs/hooks-intro.html)
       - This might allow me to make the ui animations work more seemlessly
@@ -104,19 +111,19 @@ Friday 11/30/18
   - Deciding to watch the talk on hooks and take it from there. I feel like understanding the transitions will be easier after. 
     - Tried to get into the logic behind the slider and turn it from a class into a function. Didn't get very far. Will try to get the fadein/out mechanic to work first then decide if I want to refactor into hooks.
 
-- Monday 12/3/18
+## Monday 12/3/18
   - Pushing to heroku and filling my database with listings. 
     - Got it to deploy after editing github files directly before realizing I just had to delete package-lock.json and switching my database url from the process.env variable to the actual address :/ but also :)
 
 
-- Tuesday 12/4/18
+## Tuesday 12/4/18
   - Should be filling in my listings and setting the text for the site to make it presentable, but I want to work on the transitions and turn them into react hooks soooo
   - I started working on the css on the page. Got to switch the #300 goto buttons to be block display on mobile, first 2 wide then 1 wide
     --- Just had to add property flex-wrap: wrap;
   - Looking at getting a Google flight api interface on my landing page for the listings but it's been deprecated and skyscanner is said to be better (https://rapidapi.com/skyscanner/api/skyscanner-flight-search)
   - Was going to hold off on pushing my updates until I have a way to get my transitons to work flawlessly but I like the slider. 
 
-- Wednesday 12/5/18 
+## Wednesday 12/5/18 
   - Actuallying filling out the listing data today! Putting some font awesome icons in as well.
     - Changed my baths from int to float
     - Edited my listings query to include baths
@@ -126,12 +133,12 @@ Friday 11/30/18
   - I notice something weird going on with the first two listings, that the opacity of the color shade is very low. Also think that having the better listing always in the big box is better. To do that I would have to edit the zipper, and the easiest way I can think to do that is to have the linked listings in the DB.
     - Zipper with two 'teeth' at a time and a first and last conditional is actually the easiest.  
 
-- Thursday 12/6/18 
+## Thursday 12/6/18 
   - Changed the banner image and image on the generic page. But they need to be shrunk and/or optimized because they are too big rn. 
 
 - Did nothing really on friday and saturday. Not sure what I did on Thursday.
 
-- Sunday 12/9/18
+## Sunday 12/9/18
   - Made a list of the best cities for devs by dividing salary by cost of living. Omaha, Austin and Portland Or seems to be my top 3. 
   - Couple of things I'm looking at doing rn.
     - Changing the transition to react hooks and making a repo of it with a slide, fade and maybe another transition. 
@@ -149,7 +156,7 @@ Friday 11/30/18
             - https://www.amazon.com/Mixology-Cocktail-Recipe-Chart-Poster/dp/B003B6N458
             - https://popchart.co/products/the-cocktail-chart-of-film-literature?variant=1009031284&gclid=CjwKCAiAl7PgBRBWEiwAzFhmmuSLUSOsUoF67PjKgEYkOxKRiknC_nWQIR1jGSXvZN__XrZKMm5gvRoCYkYQAvD_BwE)
 
-Tuesday 12/18/2018
+## Tuesday 12/18/2018
 - Couple of things I can think of doing today but first of all where are all my notes?!?:
   - Sperry Farms
     - Get a react router running for smooth transitions and change the banner
