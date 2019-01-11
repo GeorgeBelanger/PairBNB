@@ -1,7 +1,25 @@
 # PairBNB: Your AirBNB Budget Across the World
-**The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price, but one is amazing and the other is questionable.   **
+### The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price, but one is amazing and the other is questionable.
 
-The technologies I used are Node.JS, React, 
+### The technologies I used are Node.JS, React, GraphQL, AWS EC2 & S3, HTML & CSS
+
+I took the theme from html5up.com and ran with it. 
+  
+### CSS
+  
+There are a few features that make the app feel the way it does: [React & Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-and-transitions), [scrolly buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons), [GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles), [menu lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox), and of course [CSS](https://github.com/GeorgeBelanger/html_into_react#CSS). 
+  
+### GraphQL Articles
+  
+  
+  
+### Scrolly Buttons
+  
+### React and Transitions
+ 
+### Menu Lightbox
+
+### CSS
 
 Below is a development log
 
