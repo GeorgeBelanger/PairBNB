@@ -3,26 +3,28 @@
 
 ### The technologies I used are Node.JS, React, GraphQL, AWS EC2 & S3, HTML & CSS
 
+<i class="fab fa-react"></i>
+
 I took the theme from html5up.com and ran with it. 
   
-### CSS
+## CSS
   
 There are a few features that make the app feel the way it does: [React & Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-and-transitions), [scrolly buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons), [GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles), [menu lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox), and of course [CSS](https://github.com/GeorgeBelanger/html_into_react#CSS). 
   
-### GraphQL Articles
+## GraphQL Articles
   
   
   
-### Scrolly Buttons
+## Scrolly Buttons
   
-### React and Transitions
+## React and Transitions
  
-### Menu Lightbox
+## Menu Lightbox
 
-### CSS
+## CSS
 
-Below is a development log
 
+# Development log
 ## Monday 11/26/18
 
 The order that the javascripts are loading is causing an issue: one is that the routes get messed up if they don't load correctly and when you click the menu it brings you to your current address with #menu on the end and doesn't display the menu.
