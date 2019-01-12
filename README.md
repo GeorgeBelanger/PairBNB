@@ -1,12 +1,12 @@
 # PairBNB: Your AirBNB Budget Across the World
 ### The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price, but one is amazing and the other is questionable.
 
-### The technologies I used are Node.JS, <img src="http://chittagongit.com/images/react-icon/react-icon-14.jpg" alt="React Icon" width="35" height="35" />React, GraphQL, AWS EC2<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/2000px-AWS_Simple_Icons_AWS_Cloud.svg.png" alt="AWS Icon" width="75" height="75" />, HTML & CSS
+### The technologies I used are Node.JS, <img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="25" height="25" />React, GraphQL, AWS EC2<img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="25" height="25" />, HTML & CSS
 
 
 :hotsprings:
 
-<img src="http://chittagongit.com/images/react-icon/react-icon-14.jpg" alt="React Icon" width="35" height="35" /><img src="https://cdn2.iconfinder.com/data/icons/nodejs-1/512/nodejs-512.png" alt="Node Icon" width="40" height="40" /><img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="25" height="25" /><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/2000px-AWS_Simple_Icons_AWS_Cloud.svg.png" alt="AWS Icon" width="75" height="75" />
+<img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="30" height="30" /><img src="https://konpa.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="Node Icon" width="40" height="40" /><img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="25" height="25" /><img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="30" height="30" />
 
 I took the theme from html5up.com and ran with it. 
   
