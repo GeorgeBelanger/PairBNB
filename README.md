@@ -6,7 +6,7 @@
 
 :hotsprings:
 
-<img src="https://png.pngtree.com/svg/20170719/react_1353128.png" alt="React Icon" width="50" height="50" />
+<img src="http://chittagongit.com/images/react-icon/react-icon-14.jpg" alt="React Icon" width="50" height="50" />
 
 I took the theme from html5up.com and ran with it. 
   
