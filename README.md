@@ -3,7 +3,10 @@
 
 ### The technologies I used are Node.JS, React, GraphQL, AWS EC2 & S3, HTML & CSS
 
-<i class="fab fa-react"></i>
+
+:hotsprings:
+
+<img src="https://png.pngtree.com/svg/20170719/react_1353128.png" alt="React Icon" width="50" height="50" />
 
 I took the theme from html5up.com and ran with it. 
   
