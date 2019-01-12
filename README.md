@@ -1,7 +1,7 @@
 # PairBNB: Your AirBNB Budget Across the World
 ### The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price, but one is amazing and the other is questionable.
 
-### The technologies I used are Node.JS, React, GraphQL, AWS EC2, HTML & CSS
+### The technologies I used are Node.JS, <img src="http://chittagongit.com/images/react-icon/react-icon-14.jpg" alt="React Icon" width="35" height="35" />React, GraphQL, AWS EC2<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/2000px-AWS_Simple_Icons_AWS_Cloud.svg.png" alt="AWS Icon" width="75" height="75" />, HTML & CSS
 
 
 :hotsprings:
@@ -14,7 +14,7 @@ I took the theme from html5up.com and ran with it.
   
 There are a few features that make the app feel the way it does: [React & Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-and-transitions), [scrolly buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons), [GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles), [menu lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox), and of course [CSS](https://github.com/GeorgeBelanger/html_into_react#CSS). 
   
-## GraphQL Articles
+## <img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="25" height="25" />GraphQL Articles
   
   
   
@@ -26,6 +26,7 @@ There are a few features that make the app feel the way it does: [React & Transi
 
 ## CSS
 
+## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/2000px-AWS_Simple_Icons_AWS_Cloud.svg.png" alt="AWS Icon" width="75" height="75" />AWS Server
 
 # Development log
 ## Monday 11/26/18
