@@ -29,24 +29,24 @@ The idea behind this app is to show how big the difference is in purchasing powe
    
   ```javascript
     const pairedListings = [expensiveListings[0]]
-     for (var i = 0; i < expensiveListings.length; i += 2) {
+    for (var i = 0; i < expensiveListings.length; i += 2) {
           pairedListings.push(inexpensiveListings[i], inexpensiveListings[i + 1], expensiveListings[i + 1], expensiveListings[i + 2])
         }
-     pairedListings.push(inexpensiveListings[-1])
-     const result = pairedListings.filter(listing => listing !== undefined)
+    pairedListings.push(inexpensiveListings[-1])
+    const result = pairedListings.filter(listing => listing !== undefined)
   ```
     
   Then the result is mapped to the format which listings can accept with react keys so they can be identified as added, removed or changed:
   
-     ```javascript
-     return result.map((currentListing) => (
-          <Listing key={currentListing.id.toString()} listing={currentListing} />
-      )
-      ```
+  ```javascript
+    return result.map((currentListing) => (
+      <Listing key={currentListing.id.toString()} listing={currentListing} />
+    )
+  ```
       
   Listing then transforms them into html to be inserted with into our home component: 
   
-    ```javascript
+  ```javascript
     const Listing = (props) => (
     <article id={props.listing.price} className='image' style={{ backgroundImage: `url(${props.listing.displayImageUrl})`}}>
       <header className='major'>
@@ -61,17 +61,17 @@ The idea behind this app is to show how big the difference is in purchasing powe
         </p>
       </header>
     </article>
-    ```
+  ```
     
   End result in our home component which is wrapped in our apollo provider which offers the address to our database, `{client}`:
   
-    ```javascript
+  ```javascript
     <ApolloProvider client={client}>
-        <section className='tiles'>
-          <ListingsHome />
-        </section>
-     </ApolloProvider>
-     ```
+      <section className='tiles'>
+        <ListingsHome />
+      </section>
+    </ApolloProvider>
+  ```
   
 ## React Router and Transitions
 
