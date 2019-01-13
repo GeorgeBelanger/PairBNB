@@ -1,30 +1,77 @@
 # PairBNB: Your AirBNB Budget Across the World
-The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price, but one is amazing and the other is questionable.
+The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price.
 
 <img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="Node Icon" width="75" height="75" /><img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="75" height="75" />
 
 ### Table of Contents:  
-#### [React Router and Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-router-and-transitions)
-#### [scrolly buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons)
-#### [GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles)
-#### [menu lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox)
-#### [CSS](https://github.com/GeorgeBelanger/html_into_react#CSS). 
+[GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles)
+[React Router and Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-router-and-transitions)
+[Page Components](https://github.com/GeorgeBelanger/html_into_react#page-components) 
+[Scrolly Buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons)
+[Menu Lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox)
+[CSS](https://github.com/GeorgeBelanger/html_into_react#CSS).
+[AWS Server](https://github.com/GeorgeBelanger/html_into_react#aws-server)
+[Development Log](https://github.com/GeorgeBelanger/html_into_react#development-log)
   
 ## GraphQL Articles
+  The first thing that makes this website stand out is that instead of all the listings being hardcoded, I make an api call to my graphcool database returns all the listings and thier information. The dataflow through components goes like this:
+  > graphcool database -->  grapqhl api call --> listing.js --> listingsHome.js --> home.js --> app.js --> index.js --> browser
+  To pair the inexpensive and expensive listings by price I 
+  1. queried for all listings, 
+  2. ordered by decending price, 
+  3. wrote a custom zipper function to pair exp and inexp listings, 
+  4. filtered out all undefined listings, and 
+  5. sent listings to listingHome.js to turn the data into html with css classes and react keys. 
   
-  
-  
-## Scrolly Buttons
+  For the zipper, I wanted to alternate 2 exp/inexp listings at a time because on desktop, the big listings are at 1,2,5,6,etc.
+    `const pairedListings = [expensiveListings[0]]
+     for (var i = 0; i < expensiveListings.length; i += 2) {
+          pairedListings.push(inexpensiveListings[i], inexpensiveListings[i + 1], expensiveListings[i + 1], expensiveListings[i + 2])
+        }
+     pairedListings.push(inexpensiveListings[-1])
+     const result = pairedListings.filter(listing => listing !== undefined)
+     `
+  Then the result is mapped to the format which listings can accept with react keys so they can be identified as added, removed or changed:
+     `return result.map((currentListing) => (
+          <Listing key={currentListing.id.toString()} listing={currentListing} />
+      )`
+  Listing then transforms them into html to be inserted with into our home component: 
+    `const Listing = (props) => (
+    <article id={props.listing.price} className='image' style={{ backgroundImage: `url(${props.listing.displayImageUrl})`}}>
+      <header className='major'>
+        <h3>
+          <a href={props.listing.url} rel='noopener noreferrer' target='_blank' className='link'>{props.listing.title} <br />
+        ${props.listing.price}/night</a>
+        </h3>
+        <p>
+          <b>{props.listing.location} <br />
+            {props.listing.beds} <i className='icon alt fas fa-bed' /> {props.listing.baths} <i className='icon alt fas fa-bath' /> {props.listing.reviewRating} <i className='icon alt fas fa-star' />
+          </b>
+        </p>
+      </header>
+    </article>`
+    
+  End result in our home component which is wrapped in our apollo provider which offers the address to our database, `{client}`:
+    `<ApolloProvider client={client}>
+        <section className='tiles'>
+          <ListingsHome />
+        </section>
+     </ApolloProvider>`  
   
 ## React Router and Transitions
- 
+
+## Page Components
+
+## Scrolly Buttons
+
 ## Menu Lightbox
 
 ## CSS
 
-## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/AWS_Simple_Icons_AWS_Cloud.svg/2000px-AWS_Simple_Icons_AWS_Cloud.svg.png" alt="AWS Icon" width="75" height="75" />AWS Server
+## AWS Server
 
 # Development log
+
 ## Monday 11/26/18
 
 The order that the javascripts are loading is causing an issue: one is that the routes get messed up if they don't load correctly and when you click the menu it brings you to your current address with #menu on the end and doesn't display the menu.
