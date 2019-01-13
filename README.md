@@ -16,27 +16,31 @@ The idea behind this app is to show how big the difference is in purchasing powe
 ## GraphQL Articles
   The first thing that makes this website stand out is that instead of all the listings being hardcoded, I make an api call to my graphcool database returns all the listings and thier information. The dataflow through components goes like this:
   > graphcool database -->  grapqhl api call --> listing.js --> listingsHome.js --> home.js --> app.js --> index.js --> browser
+  
   To pair the inexpensive and expensive listings by price I 
-  1. queried for all listings, 
-  2. ordered by decending price, 
-  3. wrote a custom zipper function to pair exp and inexp listings, 
-  4. filtered out all undefined listings, and 
-  5. sent listings to listingHome.js to turn the data into html with css classes and react keys. 
+    1. queried for all listings, 
+    2. ordered by decending price, 
+    3. wrote a custom zipper function to pair exp and inexp listings, 
+    4. filtered out all undefined listings, and 
+    5. sent listings to listingHome.js to turn the data into html with css classes and react keys. 
   
   For the zipper, I wanted to alternate 2 exp/inexp listings at a time because on desktop, the big listings are at 1,2,5,6,etc.
-    `const pairedListings = [expensiveListings[0]]
+    ```javascript
+    const pairedListings = [expensiveListings[0]]
      for (var i = 0; i < expensiveListings.length; i += 2) {
           pairedListings.push(inexpensiveListings[i], inexpensiveListings[i + 1], expensiveListings[i + 1], expensiveListings[i + 2])
         }
      pairedListings.push(inexpensiveListings[-1])
      const result = pairedListings.filter(listing => listing !== undefined)
-     `
+     ```
   Then the result is mapped to the format which listings can accept with react keys so they can be identified as added, removed or changed:
-     `return result.map((currentListing) => (
+     ```javascript
+     return result.map((currentListing) => (
           <Listing key={currentListing.id.toString()} listing={currentListing} />
-      )`
+      )```
   Listing then transforms them into html to be inserted with into our home component: 
-    `const Listing = (props) => (
+    ```javascript
+    const Listing = (props) => (
     <article id={props.listing.price} className='image' style={{ backgroundImage: `url(${props.listing.displayImageUrl})`}}>
       <header className='major'>
         <h3>
@@ -49,14 +53,15 @@ The idea behind this app is to show how big the difference is in purchasing powe
           </b>
         </p>
       </header>
-    </article>`
+    </article>```
     
   End result in our home component which is wrapped in our apollo provider which offers the address to our database, `{client}`:
-    `<ApolloProvider client={client}>
+    ```javascript
+    <ApolloProvider client={client}>
         <section className='tiles'>
           <ListingsHome />
         </section>
-     </ApolloProvider>`  
+     </ApolloProvider>```
   
 ## React Router and Transitions
 
