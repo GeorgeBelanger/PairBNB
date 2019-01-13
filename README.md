@@ -1,26 +1,22 @@
 # PairBNB: Your AirBNB Budget Across the World
 ### The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price, but one is amazing and the other is questionable.
 
-### The technologies I used are Node.JS, <img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="25" height="25" />React, GraphQL, AWS EC2<img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="25" height="25" />, HTML & CSS
-
-
-:hotsprings:
-
-<img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="30" height="30" /><img src="https://konpa.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="Node Icon" width="40" height="40" /><img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="25" height="25" /><img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="30" height="30" />
+### The technologies I used are Node.JS, React, React-router, Webpack, GraphQL(Apollo & Graphcool), AWS EC2, HTML & CSS
+<img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="Node Icon" width="75" height="75" /><img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="75" height="75" />
 
 I took the theme from html5up.com and ran with it. 
   
 ## CSS
   
-There are a few features that make the app feel the way it does: [React & Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-and-transitions), [scrolly buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons), [GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles), [menu lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox), and of course [CSS](https://github.com/GeorgeBelanger/html_into_react#CSS). 
+There are a few features that make the app feel the way it does: [React Router and Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-router-and-transitions), [scrolly buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons), [GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles), [menu lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox), and of course [CSS](https://github.com/GeorgeBelanger/html_into_react#CSS). 
   
-## <img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="25" height="25" />GraphQL Articles
+## <img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="15" height="15" />GraphQL Articles
   
   
   
 ## Scrolly Buttons
   
-## React and Transitions
+## React Router and Transitions
  
 ## Menu Lightbox
 
