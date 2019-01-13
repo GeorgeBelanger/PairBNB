@@ -5,12 +5,19 @@ The idea behind this app is to show how big the difference is in purchasing powe
 
 ### Table of Contents:  
 [GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles)
+
 [React Router and Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-router-and-transitions)
+
 [Page Components](https://github.com/GeorgeBelanger/html_into_react#page-components) 
+
 [Scrolly Buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons)
+
 [Menu Lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox)
+
 [CSS](https://github.com/GeorgeBelanger/html_into_react#CSS).
+
 [AWS Server](https://github.com/GeorgeBelanger/html_into_react#aws-server)
+
 [Development Log](https://github.com/GeorgeBelanger/html_into_react#development-log)
   
 ## GraphQL Articles
