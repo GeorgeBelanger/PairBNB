@@ -1,27 +1,25 @@
 # PairBNB: Your AirBNB Budget Across the World
+
+Website is live here: [http://ec2-18-191-187-105.us-east-2.compute.amazonaws.com/](http://ec2-18-191-187-105.us-east-2.compute.amazonaws.com/)
+
 The idea behind this app is to show how big the difference is in purchasing power between expensive locations and inexpensive ones. It shows two listings side by side *or together if on mobile* that have the same price.
 
-<img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="Node Icon" width="75" height="75" /><img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="75" height="75" />
+<img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="Node Icon" width="75" height="75" /><img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="75" height="75" /><img src="https://cdn.svgporn.com/logos/graphcool.svg" alt="Graphcool Icon" width="75" height="75" /><img src="https://cdn.svgporn.com/logos/apollostack.svg" alt="Apollo Icon" width="75" height="75" /><img src="https://cdn.svgporn.com/logos/webpack.svg" alt="Webpack Icon" width="75" height="75" />
 
 ### Table of Contents:  
-[GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles)
+[GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles)<br/>
+[React Router and Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-router-and-transitions)<br/>
+[Page Components](https://github.com/GeorgeBelanger/html_into_react#page-components) <br/>
+[Scrolly Buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons)<br/>
+[Menu Lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox)<br/>
+[AWS Server](https://github.com/GeorgeBelanger/html_into_react#aws-server)<br/>
+[General Notes](https://github.com/GeorgeBelanger/html_into_react#general-notes)<br/>
+[Development Log](https://github.com/GeorgeBelanger/html_into_react#development-log)<br/>
 
-[React Router and Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-router-and-transitions)
-
-[Page Components](https://github.com/GeorgeBelanger/html_into_react#page-components) 
-
-[Scrolly Buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons)
-
-[Menu Lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox)
-
-[CSS](https://github.com/GeorgeBelanger/html_into_react#CSS).
-
-[AWS Server](https://github.com/GeorgeBelanger/html_into_react#aws-server)
-
-[Development Log](https://github.com/GeorgeBelanger/html_into_react#development-log)
   
 ## GraphQL Articles
-  The first thing that makes this website stand out is that instead of all the listings being hardcoded, I make an api call to my graphcool database returns all the listings and thier information. The dataflow through components goes like this:
+  The first thing that makes this website stand out is that instead of all the listings being hardcoded, I make an api call to my graphcool database returns all the listings and thier information. This means I can add, remove and edit listings through graphql queries. The dataflow through components goes like this:
+  
   > graphcool database -->  grapqhl api call --> listing.js --> listingsHome.js --> home.js --> app.js --> index.js --> browser
   
   To pair the inexpensive and expensive listings by price I: 
@@ -79,18 +77,87 @@ The idea behind this app is to show how big the difference is in purchasing powe
       </section>
     </ApolloProvider>
   ```
+  My GraphQL listing schema can be found in `/graphcool/types.graphql` 
   
 ## React Router and Transitions
+  
+  Using React Router instead of traditional routing as you can see below. I also added SwitchWithSlide, whose guide to implementation can be found [here](https://medium.com/onfido-tech/animations-with-react-router-8e97222e25e1) in place of a traditonal switch which is what gives us the swiping transition animation between pages. You can see the complete architecture of our app here.
+  
+  ```javascript
+    class App extends Component {
+      render () {
+        return (
+          <BrowserRouter>
+            <div id='wrapper' className='container'>
+              <HeaderMenu />
+              <SwitchWithSlide>
+                <Route path='/' component={Home} exact />
+                <Route path='/about' component={About} />
+                <Route path='/listingPage/:id' component={ListingPage} />
+                <Route component={Error} />
+              </Switch>
+              <Contact />
+              <Footer />
+            </div>
+          </BrowserRouter>
+        )
+      }
+    };
+  ```
+App goes between home, about and specific listing pages. The menu, contact and footer are included in every page. 
 
 ## Page Components
 
+  The page components(contact, home, about, menu, footer, contact) are the different parts of the old HTML page broken down into different components, plugged into an HMTL to JSX transformer found here: [https://transform.now.sh/html-to-jsx/](https://transform.now.sh/html-to-jsx/) and saved as reusable .js components.
+
 ## Scrolly Buttons
-
+  
+  The scrolly buttons are regular `href=#100` buttons, but everytime the page is moused over the buttons get the scrolly attribute which is what gives them a gradual, smooth scroll instead of an instant snap.
+  
+  ```javascript
+    // Scrolly. Had to change it so it reloaded after the page changed. 
+    document.addEventListener("mouseover", function(){ 
+      $('.scrolly').scrolly({
+        offset: function () {
+          return $header.height() - 2
+        }
+      })
+    })
+  ```
+  
+  I gave the page the mouseover event listener because every variation I tried of 'onload' didn't trigger the event listener when I went from home --> about --> home. I think this had something to do with react but maybe it doesn't. Too many event listeners to find the perfect one ¯\_(ツ)_/¯. 
+  
 ## Menu Lightbox
+  
+  The menu is always present, but only visible when the href=#menu is clicked, as seen in the code below:
+  
+  ```javascript
+    $root.on('click', 'a[href="#menu"]', function (event) {
+      event.stopPropagation()
+      event.preventDefault()
 
-## CSS
+      // Toggle.
+      $menu._toggle()
+  ```
+  
+  $menu.toggle toggles the 'is-menu-visible' className which has the css style display:none. Stop propogation and prevent default stops the location from adding #menu on the end and scrolling to the menu section of the page. The menu also has a fade in css transition. 
 
 ## AWS Server
+
+  AWS server was also my first implmentation and used EC2, CodeDeploy & Github(instead of S3) and IAM. This wasn't the easiest deployment but I got it done and now the website can be seen at [http://ec2-18-191-187-105.us-east-2.compute.amazonaws.com/](http://ec2-18-191-187-105.us-east-2.compute.amazonaws.com/) It was my first experience using AWS outside of S3 and took a while to figure out. I had to: 
+  
+    1. Create an EC2 instance
+    2. Set up users, groups and roles that could use the instance
+    3. Set up puTTy and SSH into the instance
+    4. Install git, node, and codedeploy on the instance before installing my repository
+    5. Create symbolic links to node, node-waf, npm, and react-scripts
+    6. Install pm2 to keep deployment running without an SSH session open
+    7. Install nginx to forward from port 80(default broswer port) to port 3000 where the app is live
+    
+  Next steps would be to host this site on AWS Lambda and figure out SSR!
+  
+## General Notes
+  - The area surrounding the listing text is not a link so when users on mobile use the site they can see the color filter over top removed by clicking but also get rerouted when they click the text. 
 
 # Development log
 
