@@ -37,12 +37,15 @@ The idea behind this app is to show how big the difference is in purchasing powe
   ```
     
   Then the result is mapped to the format which listings can accept with react keys so they can be identified as added, removed or changed:
+  
      ```javascript
      return result.map((currentListing) => (
           <Listing key={currentListing.id.toString()} listing={currentListing} />
       )
       ```
+      
   Listing then transforms them into html to be inserted with into our home component: 
+  
     ```javascript
     const Listing = (props) => (
     <article id={props.listing.price} className='image' style={{ backgroundImage: `url(${props.listing.displayImageUrl})`}}>
@@ -61,6 +64,7 @@ The idea behind this app is to show how big the difference is in purchasing powe
     ```
     
   End result in our home component which is wrapped in our apollo provider which offers the address to our database, `{client}`:
+  
     ```javascript
     <ApolloProvider client={client}>
         <section className='tiles'>
