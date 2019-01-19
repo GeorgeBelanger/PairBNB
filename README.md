@@ -7,14 +7,14 @@ The idea behind this app is to show how big the difference is in purchasing powe
 <img src="https://konpa.github.io/devicon/devicon.git/icons/react/react-original.svg" alt="React Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/nodejs/nodejs-original.svg" alt="Node Icon" width="75" height="75" /><img src="https://s3-us-west-2.amazonaws.com/svgporn.com/logos/graphql.svg" alt="GraphQL Icon" width="75" height="75" /><img src="https://konpa.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS Icon" width="75" height="75" /><img src="https://cdn.svgporn.com/logos/graphcool.svg" alt="Graphcool Icon" width="75" height="75" /><img src="https://cdn.svgporn.com/logos/apollostack.svg" alt="Apollo Icon" width="75" height="75" /><img src="https://cdn.svgporn.com/logos/webpack.svg" alt="Webpack Icon" width="75" height="75" /><img src="https://cdn.svgporn.com/logos/docker.svg" alt="Docker Icon" width="75" height="75" /><img src="https://cdn.svgporn.com/logos/mysql.svg" alt="mySQL Icon" width="75" height="75" />
 
 ### Table of Contents:  
-[GraphQL Articles](https://github.com/GeorgeBelanger/html_into_react#GraphQL-articles)<br/>
-[React Router and Transitions (fade in & slider)](https://github.com/GeorgeBelanger/html_into_react#react-router-and-transitions)<br/>
-[Page Components](https://github.com/GeorgeBelanger/html_into_react#page-components) <br/>
-[Scrolly Buttons](https://github.com/GeorgeBelanger/html_into_react#scrolly-buttons)<br/>
-[Menu Lightbox](https://github.com/GeorgeBelanger/html_into_react#menu-lightbox)<br/>
-[AWS Server](https://github.com/GeorgeBelanger/html_into_react#aws-server)<br/>
-[General Notes](https://github.com/GeorgeBelanger/html_into_react#general-notes)<br/>
-[Development Log](https://github.com/GeorgeBelanger/html_into_react#development-log)<br/>
+[GraphQL Articles](https://github.com/GeorgeBelanger/PairBNB#GraphQL-articles)<br/>
+[React Router and Transitions (fade in & slider)](https://github.com/GeorgeBelanger/PairBNB#react-router-and-transitions)<br/>
+[Page Components](https://github.com/GeorgeBelanger/PairBNB#page-components) <br/>
+[Scrolly Buttons](https://github.com/GeorgeBelanger/PairBNB#scrolly-buttons)<br/>
+[Menu Lightbox](https://github.com/GeorgeBelanger/PairBNB#menu-lightbox)<br/>
+[AWS Server](https://github.com/GeorgeBelanger/PairBNB#aws-server)<br/>
+[General Notes](https://github.com/GeorgeBelanger/PairBNB#general-notes)<br/>
+[Development Log](https://github.com/GeorgeBelanger/PairBNB#development-log)<br/>
 
   
 ## GraphQL Articles
