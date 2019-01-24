@@ -17,13 +17,8 @@ window.jQuery = jQuery
 
 class Container extends React.Component {
 
-  state = { toggle: true }
-  toggle = () => this.setState(state => ({ toggle: !state.toggle }))
-
   render () {
 
-    const toggle = this.state.toggle
-    console.log('state: ', this.state)
     return (
       <div>
         <div id='wrapper' className='container'>

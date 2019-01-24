@@ -1,6 +1,6 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Listings from '../listings'
-import { ApolloProvider } from 'react-apollo'
+import { ApolloProvider, renderToStringWithData } from 'react-apollo'
 import ApolloClient from 'apollo-boost'
 import { Spring } from 'react-spring'
 
@@ -23,10 +23,14 @@ const styles = {
 
 
 
-const ListingPage = ({match}, props, toggl) => {
-  const toggle = toggl
-  console.log('toggl', toggl)
-  console.log('props: ', props)
+const ListingPage = ({match}) => {
+
+
+  
+  const [toggle, setToggle] = useState(true) 
+
+
+
   return (
     <React.Fragment>
       <title>Landing</title>
@@ -57,57 +61,55 @@ const ListingPage = ({match}, props, toggl) => {
         <section id='one'>
           <div className='inner'>
             <header className='major'>
-
-            <Spring
-        from={{ color: 'black' }}
-        to={{
-          coords: toggle ? [0, 0] : [50, 50],
-          color: toggle ? '#247BA0' : '#70C1B3',
-          start: toggle ? '#B2DBBF' : '#B2DBBF',
-          end: toggle ? '#247BA0' : '#F3FFBD',
-          scale: toggle ? 0.3 : 0.4,
-          shape: toggle ? TRIANGLE : RECTANGLE,
-          stop: toggle ? '0%' : '50%',
-          rotation: toggle ? '0deg' : '45deg',
-        }}>
-        {({
-          color,
-          scale,
-          shape,
-          start,
-          end,
-          stop,
-          rotation,
-          coords,
-          ...rest
-        }) => (
-          <div
-            style={{
-              ...styles.container,
-              background: `linear-gradient(to bottom, ${start} ${stop}, ${end} 100%)`,
-              ...rest,
-            }}>
-            <svg
-              style={{
-                ...styles.shape,
-                transform: `scale3d(${scale}, ${scale}, ${scale}) rotate(${rotation}) translate3d(${
-                  coords[0]
-                }px,${coords[1]}px,0)`,
-              }}
-              version="1.1"
-              viewBox="0 0 400 400">
-              <g
-                style={{ cursor: 'pointer' }}
-                fill={color}
-                fillRule="evenodd"
-                onClick={this.toggle}>
-                <path id="path-1" d={shape} />
-              </g>
-            </svg>
-          </div>
-        )}
-      </Spring>
-
+              <Spring
+                from={{ color: 'black' }}
+                to={{
+                  coords: toggle ? [0, 0] : [50, 50],
+                  color: toggle ? '#247BA0' : '#70C1B3',
+                  start: toggle ? '#B2DBBF' : '#B2DBBF',
+                  end: toggle ? '#247BA0' : '#F3FFBD',
+                  scale: toggle ? 0.3 : 0.4,
+                  shape: toggle ? TRIANGLE : RECTANGLE,
+                  stop: toggle ? '0%' : '50%',
+                  rotation: toggle ? '0deg' : '45deg',
+                }}>
+                {({
+                  color,
+                  scale,
+                  shape,
+                  start,
+                  end,
+                  stop,
+                  rotation,
+                  coords,
+                  ...rest
+                }) => (
+                  <div
+                    style={{
+                      ...styles.container,
+                      background: `linear-gradient(to bottom, ${start} ${stop}, ${end} 100%)`,
+                      ...rest,
+                    }}>
+                    <svg
+                      style={{
+                        ...styles.shape,
+                        transform: `scale3d(${scale}, ${scale}, ${scale}) rotate(${rotation}) translate3d(${
+                          coords[0]
+                        }px,${coords[1]}px,0)`,
+                      }}
+                      version="1.1"
+                      viewBox="0 0 400 400">
+                      <g
+                        style={{ cursor: 'pointer' }}
+                        fill={color}
+                        fillRule="evenodd"
+                        onClick={() => setToggle(!toggle)}>
+                        <path id="path-1" d={shape} />
+                      </g>
+                    </svg>
+                  </div>
+                )}
+              </Spring>
               <h2>Sed amet aliquam</h2>
             </header>
             <p />
