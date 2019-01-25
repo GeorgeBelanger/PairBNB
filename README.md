@@ -276,7 +276,7 @@ I have to come up with a way to alternate between expensive listing for N dollar
   - Should be filling in my listings and setting the text for the site to make it presentable, but I want to work on the transitions and turn them into react hooks soooo
   - I started working on the css on the page. Got to switch the #300 goto buttons to be block display on mobile, first 2 wide then 1 wide
     --- Just had to add property flex-wrap: wrap;
-  - Looking at getting a Google flight api interface on my landing page for the listings but it's been deprecated and skyscanner is said to be better (https://rapidapi.com/skyscanner/api/skyscanner-flight-search)
+  - Looking at getting a Google flight api interface on my landing page for the listings but it's been deprecated and skyscanner is said to be better [https://rapidapi.com/skyscanner/api/skyscanner-flight-search](https://rapidapi.com/skyscanner/api/skyscanner-flight-search)
   - Was going to hold off on pushing my updates until I have a way to get my transitons to work flawlessly but I like the slider. 
 
 ## Wednesday 12/5/18 

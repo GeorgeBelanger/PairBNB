@@ -1,11 +1,12 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Listing = (props) => (
-  <article id={props.listing.price} className='image' style={{ backgroundImage: `url(${props.listing.displayImageUrl})`}}>
+  <article id={props.listing.price} className='image' style={{ backgroundImage: `url(${props.listing.displayImageUrl})`}} >
     <header className='major'>
       <h3>
-        <a href={props.listing.url} rel='noopener noreferrer' target='_blank' className='link'>{props.listing.title} <br />
-      ${props.listing.price}/night</a>
+        <NavLink to={`listingpage/${props.listing.id}`} rel='noopener noreferrer' className='link'>{props.listing.title} <br />
+      ${props.listing.price}/night</NavLink>
       </h3>
       <p>
         <b>{props.listing.location} <br />
@@ -13,9 +14,7 @@ const Listing = (props) => (
         </b>
       </p>
     </header>
-  </article>
-  // import { NavLink } from 'react-router-dom'
-  // NavLink to={`/listingPage/${props.listing.id}`}
+  </article>  
 )
 
 export default Listing

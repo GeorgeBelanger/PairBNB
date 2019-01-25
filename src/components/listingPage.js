@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import Listings from '../listings'
-import { ApolloProvider, renderToStringWithData } from 'react-apollo'
+import { ApolloProvider } from 'react-apollo'
 import ApolloClient from 'apollo-boost'
 import { Spring } from 'react-spring'
 
@@ -33,7 +33,7 @@ const ListingPage = ({match}) => {
 
   return (
     <React.Fragment>
-      <title>Landing</title>
+      <title></title>
       {/* Banner */}
       {/* Note: The "styleN" class below should match that of the header element. */}
       <section id='banner' className='style2'>

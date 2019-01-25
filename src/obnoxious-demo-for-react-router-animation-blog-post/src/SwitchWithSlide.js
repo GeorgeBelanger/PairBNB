@@ -22,7 +22,7 @@ class SlideOut extends React.Component {
 
     if (prevUniqId !== uniqId) {
       this.setState({
-        childPosition: Slider.FADE_IN,
+        childPosition: Slider.TO_LEFT,
         curChild: this.props.children,
         curUniqId: uniqId,
         prevChild: prevProps.children,
@@ -34,7 +34,7 @@ class SlideOut extends React.Component {
 
   swapChildren = () => {
     this.setState({
-      childPosition: Slider.FADE_OUT,
+      childPosition: Slider.FROM_RIGHT,
       prevChild: null,
       prevUniqId: null,
       animationCallback: null

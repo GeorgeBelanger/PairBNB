@@ -11,14 +11,11 @@ import Error from './components/Error'
 import jQuery from 'jquery'
 import SwitchWithSlide from './obnoxious-demo-for-react-router-animation-blog-post/src/SwitchWithSlide'
 
-
 require('dotenv').config()
 window.jQuery = jQuery
 
 class Container extends React.Component {
-
   render () {
-
     return (
       <div>
         <div id='wrapper' className='container'>
@@ -29,11 +26,6 @@ class Container extends React.Component {
             <Route path='/listingPage/:id' render={(props) => <ListingPage {...props} toggl={true} />} />
             <Route component={Error} />
           </SwitchWithSlide>
-          
-
-          
-
-
           <Contact />
           <Footer />
         </div>
