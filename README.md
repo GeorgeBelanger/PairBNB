@@ -379,3 +379,4 @@ I have to come up with a way to alternate between expensive listing for N dollar
       - I updated `runtime: nodejs8.10` to nodejs10.14.1 and `region: eu-west-1` to us-east-1
       - I see we have the index.handler and that's it. Also CORS is true which will save us headache. 
     - Changing our index.js next. 
+      - Changed our index.js file. Wondering if we should use a service worker? 
