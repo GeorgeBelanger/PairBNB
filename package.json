@@ -10,18 +10,17 @@
     "apollo-boost": "^0.1.7",
     "bootstrap": "^4.1.1",
     "classnames": "2.2.6",
-    "dotenv": "^6.1.0",
-    "express": "^4.16.4",
+    "express": "^4.16.3",
     "graphcool": "^0.11.6",
     "graphql": "^0.13.2",
     "jquery": "^3.3.1",
     "node-sass-chokidar": "^1.3.4",
-    "react": "^16.4.0",
+    "react": "next",
     "react-apollo": "^2.1.4",
-    "react-dom": "^16.4.0",
+    "react-dom": "next",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "serverless-http": "^1.9.0"
+    "react-spring": "^7.2.10"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,21 +32,5 @@
     "last 1 version",
     "> 1%",
     "IE 10"
-  ],
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.5",
-    "babel-plugin-css-modules-transform": "^1.6.2",
-    "babel-plugin-source-map-support": "^2.0.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react-app": "^7.0.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "copy-webpack-plugin": "^4.6.0",
-    "serverless-offline": "^4.4.2",
-    "serverless-webpack": "^5.2.0",
-    "url-loader": "^1.1.2",
-    "webpack": "^4.29.3",
-    "webpack-node-externals": "^1.7.2"
-  }
+  ]
 }

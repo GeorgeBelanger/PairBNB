@@ -427,12 +427,12 @@ I have to come up with a way to alternate between expensive listing for N dollar
         - I see that if we aren't running locally then webpack is running in production, but the serverless is always in dev mode. 
         - I see that node_modules are excluded and that we are going to have a commonjs2.webpack file?
     - Going to run `sls offline start` and that should give us our hello world. If it gives me my entire app I will be so pumped 
-      - Get the error 
+      | Get the error 
       >Y A M L Exception --------------------------------------
       >
       >end of the stream or a document separator is expected in "C:\my_developments\lambda-pairbnb\PairBNB\serverless.yml" at line 3, column 8:
       >  service: my-project
-    @ Got rid of the //comment at the beginning and now I get the error `serverless error --------- No matching handler found for 'index' in 'C:\my_developments\lambda-pairbnb\PairBNB'. Check your service definition.`
+    @| Got rid of the //comment at the beginning and now I get the error `serverless error --------- No matching handler found for 'index' in 'C:\my_developments\lambda-pairbnb\PairBNB'. Check your service definition.`
       - I assume this is because my index.js in inside of /src
     @ Ran `echo.> index.js` in my root folder and then copied all the index.js code into it
     - And we have hello world at localhost:3000
@@ -446,7 +446,7 @@ I have to come up with a way to alternate between expensive listing for N dollar
     - Ran `npm i -D babel-plugin-css-modules-transform babel-preset-es2015 babel-preset-react-app babel-preset-stage-2 babel-preset-env url-loader copy-webpack-plugin`
     - Changing `webpack.config.js` 
     - Running `sls offline start` again and expect to see an error related to client
-      - Error `ERROR in [copy-webpack-plugin] unable to locate 'client/build' at 'C:\my_developments\lambda-pairbnb\PairBNB\client\build'`
+      | Error `ERROR in [copy-webpack-plugin] unable to locate 'client/build' at 'C:\my_developments\lambda-pairbnb\PairBNB\client\build'`
       - Not sure where my build folder is going. Going to have to check the webpack file 
         - Changing `new CopyWebpackPlugin([{ from: "client/build", to: "build" }], {` to `new CopyWebpackPlugin([{ from: "src/build", to: "build" }], {`
         - Now getting `ERROR in [copy-webpack-plugin] unable to locate 'src/build' at 'C:\my_developments\lambda-pairbnb\PairBNB\src\build'`
@@ -455,10 +455,31 @@ I have to come up with a way to alternate between expensive listing for N dollar
             - Still getting `[copy-webpack-plugin] WARNING - unable to locate 'public/build' at 'C:\my_developments\lambda-pairbnb\PairBNB\public\build'`
             - Going to try to change it from public/build to /build because our CRA package.json is in root whereas his is in client
       - Perhaps this is because I never ran npm install and we don't have react-scripts build
-      - Ran into `Cannot read property 'thisCompilation' of undefined` after running npm install and npm run-script build to make my build file.
-        - Found this on github issue report from Dan Abramov 
+      | Ran into `Cannot read property 'thisCompilation' of undefined` after running npm install and npm run-script build to make my build file.
+        @ Found this on github issue report from Dan Abramov here https://github.com/facebook/create-react-app/issues/4076
         > If you have `react-scripts` in `package.json`, make sure you _don't_ have `webpack` in it
         - Based on this, I am just going to move my middleware and my serverless/webpack stuff up a folder. 
           - Lots of people saying just delete node_modules and use yarn install but I don't like that answer. 
-
+          - Delete .webpack
+          - Move middleware up a folder
+          - Move serverless.yml up a folder 
+          - Move index.js up a folder.
+          - As for package.json....
+            - Considering just moving up a folder and following all the run commands from the guide and also copy pasting from my previous pairbnb into the current package.json 
+          - When he said install react dependencies `npm i -S react react-dom react-scripts` I'm not sure where he meant to do that!
+            - Going to go into pairbnb and run npm install instead of doing the above anywhere
+          - Still not sure where to run build. 
+            ?? Ran npm install babel stuff in the wrong folder and I'm not sure if terminate batch job is transactional or if the 2 seconds that happened before I stopped it did something. Going to say no because there is nothing changed in my package.json
+      | Ran npm run-script build inside pairbnb and got `Failed to minify the code from this file: ./node_modules/dotenv/lib/main.js:28`
+        - Found this issue that says that some npm packages can't be compiled to ES5 and then someone said "see #261 dotenv is not intended for browser environments" https://github.com/motdotla/dotenv/issues/266
+          - Not entirely sure what that means but for me it meants use something other than dotenv. 
+          - Deleted dotenv from package.json and ran npm install
+            - I still see dotenv in node_modules but it said it removed 1 package. 
+            - Want to delete the folders in node_modules manually but will not. 
+          @| Running build again. After deleting the dotenv line in app.js Run build again and Successfully compied and we have a build folder now. 
+            - Concerned here because the public index.html has scripts in it. 
+          - Running sls offline start. 
+            - Got a bunch of `[copy-webpack-plugin] determined that 'C:/my_developments/lambda-pairbnb/PairBNB/build/asset-manifest.json' should write to 'build/asset-manifest.json'`
+            | Error: Plugin/Preset files are not allowed to export objects, only functions. In C:\my_developments\lambda-pairbnb\node_modules\babel-preset-es2015\lib\index.js
+          - Has something to do with @babel/core(babel7) and babel-core(babel6) but I am out of time. https://github.com/babel/babel/issues/8838
 
