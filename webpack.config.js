@@ -2,6 +2,7 @@
 const path = require("path");
 const slsw = require("serverless-webpack");
 const nodeExternals = require("webpack-node-externals");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: slsw.lib.entries,
   target: "node",
@@ -20,19 +21,31 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        loader: "babel-loader",
+        include: __dirname,
         exclude: /node_modules/,
+        query: {
+          presets: ["es2015", "react-app", "stage-2"],
+          plugins: ["css-modules-transform"]
+        }
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
         use: [
           {
-            loader: "babel-loader"
+            loader: "url-loader",
+            options: {
+              limit: 8000,
+              name: "images/[hash]-[name].[ext]"
+            }
           }
         ]
       }
     ]
   },
-  output: {
-    libraryTarget: "commonjs2",
-    path: path.join(__dirname, ".webpack"),
-    filename: "[name].js",
-    sourceMapFilename: "[file].map"
-  }
+  plugins: [
+    new CopyWebpackPlugin([{ from: "/build", to: "build" }], {
+      debug: "info"
+    })
+  ]
 };

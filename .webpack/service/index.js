@@ -1,5 +1,4 @@
-module.exports =
-/******/ (function(modules) { // webpackBootstrap
+(function(e, a) { for(var i in a) e[i] = a[i]; }(exports, /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -91,47 +90,12 @@ module.exports =
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
-/*! exports provided: handler */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "handler", function() { return handler; });
-/* harmony import */ var serverless_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! serverless-http */ "serverless-http");
-/* harmony import */ var serverless_http__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(serverless_http__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! express */ "express");
-/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_1__);
-
-
-const app = express__WEBPACK_IMPORTED_MODULE_1___default()();
-app.get("/", function (req, res) {
-  res.send("Hello World!");
-});
-const handler = serverless_http__WEBPACK_IMPORTED_MODULE_0___default()(app);
-
-/***/ }),
-
-/***/ "express":
-/*!**************************!*\
-  !*** external "express" ***!
-  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("express");
-
-/***/ }),
-
-/***/ "serverless-http":
-/*!**********************************!*\
-  !*** external "serverless-http" ***!
-  \**********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("serverless-http");
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: Plugin/Preset files are not allowed to export objects, only functions. In C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-preset-es2015\\lib\\index.js\n    at createDescriptor (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-descriptors.js:178:11)\n    at items.map (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-descriptors.js:109:50)\n    at Array.map (<anonymous>)\n    at createDescriptors (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-descriptors.js:109:29)\n    at createPresetDescriptors (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-descriptors.js:101:10)\n    at passPerPreset (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-descriptors.js:58:96)\n    at cachedFunction (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\caching.js:33:19)\n    at presets.presets (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-descriptors.js:29:84)\n    at mergeChainOpts (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-chain.js:320:26)\n    at C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-chain.js:283:7\n    at buildRootChain (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\config-chain.js:68:29)\n    at loadPrivatePartialConfig (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\partial.js:85:55)\n    at Object.loadPartialConfig (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\@babel\\core\\lib\\config\\partial.js:110:18)\n    at Object.<anonymous> (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-loader\\lib\\index.js:140:26)\n    at Generator.next (<anonymous>)\n    at asyncGeneratorStep (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-loader\\lib\\index.js:3:103)\n    at _next (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-loader\\lib\\index.js:5:194)\n    at C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-loader\\lib\\index.js:5:364\n    at new Promise (<anonymous>)\n    at Object.<anonymous> (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-loader\\lib\\index.js:5:97)\n    at Object._loader (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-loader\\lib\\index.js:220:18)\n    at Object.loader (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-loader\\lib\\index.js:56:18)\n    at Object.<anonymous> (C:\\my_developments\\lambda-pairbnb\\PairBNB\\node_modules\\babel-loader\\lib\\index.js:51:12)");
 
 /***/ })
 
-/******/ });
+/******/ })));
 //# sourceMappingURL=index.js.map

@@ -436,3 +436,29 @@ I have to come up with a way to alternate between expensive listing for N dollar
       - I assume this is because my index.js in inside of /src
     @ Ran `echo.> index.js` in my root folder and then copied all the index.js code into it
     - And we have hello world at localhost:3000
+    - "Run `$ create-react-app client` This should create a client directory containing a react application."
+      - I already have CRA all made except we are in the root of that directory that would be client. Not sure if I have to go up a folder yet. 
+      - The guide is asking to create a folder called middleware and put renderer.js in it. I will do that now. 
+        - In renderer.js changing `import App from "../client/src/App";` to `import App from "../src/App";`
+        - Not sure about `const filePath = path.resolve("client", "./build", "index.html");` specifically the `"client", "./build"`part because my app folder doesn't have client in it. Will leave it as is for now. 
+    - Changing `/index.js` again. Again worried about having `client` in there
+    - Reverted `src/index.js` to it's normal self. 
+    - Ran `npm i -D babel-plugin-css-modules-transform babel-preset-es2015 babel-preset-react-app babel-preset-stage-2 babel-preset-env url-loader copy-webpack-plugin`
+    - Changing `webpack.config.js` 
+    - Running `sls offline start` again and expect to see an error related to client
+      - Error `ERROR in [copy-webpack-plugin] unable to locate 'client/build' at 'C:\my_developments\lambda-pairbnb\PairBNB\client\build'`
+      - Not sure where my build folder is going. Going to have to check the webpack file 
+        - Changing `new CopyWebpackPlugin([{ from: "client/build", to: "build" }], {` to `new CopyWebpackPlugin([{ from: "src/build", to: "build" }], {`
+        - Now getting `ERROR in [copy-webpack-plugin] unable to locate 'src/build' at 'C:\my_developments\lambda-pairbnb\PairBNB\src\build'`
+          - Changed client to src in both renderer and index but now realizing that the build is located in `/public`
+            - Changed client or src in all 3 files to public.
+            - Still getting `[copy-webpack-plugin] WARNING - unable to locate 'public/build' at 'C:\my_developments\lambda-pairbnb\PairBNB\public\build'`
+            - Going to try to change it from public/build to /build because our CRA package.json is in root whereas his is in client
+      - Perhaps this is because I never ran npm install and we don't have react-scripts build
+      - Ran into `Cannot read property 'thisCompilation' of undefined` after running npm install and npm run-script build to make my build file.
+        - Found this on github issue report from Dan Abramov 
+        > If you have `react-scripts` in `package.json`, make sure you _don't_ have `webpack` in it
+        - Based on this, I am just going to move my middleware and my serverless/webpack stuff up a folder. 
+          - Lots of people saying just delete node_modules and use yarn install but I don't like that answer. 
+
+
