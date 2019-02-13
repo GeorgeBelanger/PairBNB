@@ -1,5 +1,3 @@
-//serverless.yml
-
 service: my-project
 plugins:
   - serverless-webpack

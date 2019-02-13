@@ -349,7 +349,7 @@ I have to come up with a way to alternate between expensive listing for N dollar
     - Ran `npm i -D webpack serverless-webpack serverless-offline webpack-node-externals` because 
     >We also want to install the serverless-webpack plugin which will help use all the shiny new JS. The serverless-offline plugin will allow us to deploy our Serverless stack locally. We will use webpack-node-externals to exclude node_modules from our build.
     - Copy pasted into serverless.yml 
-    ```
+    ```yaml
     //serverless.yml
 
     service: my-project
@@ -379,4 +379,60 @@ I have to come up with a way to alternate between expensive listing for N dollar
       - I updated `runtime: nodejs8.10` to nodejs10.14.1 and `region: eu-west-1` to us-east-1
       - I see we have the index.handler and that's it. Also CORS is true which will save us headache. 
     - Changing our index.js next. 
-      - Changed our index.js file. Wondering if we should use a service worker? 
+      - Changed our index.js file and commented out all the CRA code. Wondering if we should use a service worker? 
+    - Ran `echo.> webpack.config.js`
+    - Ran `npm i -D babel-core babel-loader babel-plugin-source-map-support babel-preset-env` to install the babel transpiler. To make it ECMA2015 friendly right? 
+    - Copied this into webpack.config.js
+    ```javascript
+    // webpack.config.js
+    const path = require("path");
+    const slsw = require("serverless-webpack");
+    const nodeExternals = require("webpack-node-externals");
+    module.exports = {
+      entry: slsw.lib.entries,
+      target: "node",
+      mode: slsw.lib.webpack.isLocal ? "development" : "production",
+      optimization: {
+        // We do not want to minimize our code.
+        minimize: false
+      },
+      performance: {
+        // Turn off size warnings for entry points
+        hints: false
+      },
+      devtool: "nosources-source-map",
+      externals: [nodeExternals()],
+      module: {
+        rules: [
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: [
+              {
+                loader: "babel-loader"
+              }
+            ]
+          }
+        ]
+      },
+      output: {
+        libraryTarget: "commonjs2",
+        path: path.join(__dirname, ".webpack"),
+        filename: "[name].js",
+        sourceMapFilename: "[file].map"
+      }
+    };
+    ```
+      - First thoughts looking at this: 
+        - I see that if we aren't running locally then webpack is running in production, but the serverless is always in dev mode. 
+        - I see that node_modules are excluded and that we are going to have a commonjs2.webpack file?
+    - Going to run `sls offline start` and that should give us our hello world. If it gives me my entire app I will be so pumped 
+      - Get the error 
+      >Y A M L Exception --------------------------------------
+      >
+      >end of the stream or a document separator is expected in "C:\my_developments\lambda-pairbnb\PairBNB\serverless.yml" at line 3, column 8:
+      >  service: my-project
+    @ Got rid of the //comment at the beginning and now I get the error `serverless error --------- No matching handler found for 'index' in 'C:\my_developments\lambda-pairbnb\PairBNB'. Check your service definition.`
+      - I assume this is because my index.js in inside of /src
+    @ Ran `echo.> index.js` in my root folder and then copied all the index.js code into it
+    - And we have hello world at localhost:3000
