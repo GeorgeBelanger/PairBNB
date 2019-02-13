@@ -330,3 +330,10 @@ I have to come up with a way to alternate between expensive listing for N dollar
     - start :p
   - ecommerce site
     - start :[]
+
+## Wednesday 2/13/19 4:30pm quill
+  - Today going to work on getting my projects hosted on lambda. The deadline is 22nd for my aws free teir I think but I can host on netlify if this doesn't happen before then. 
+    - I still hadn't decided on which guide to use first, because I need to host a CRA app and also a node + express app.
+      - I'm going to first do the create-react-app https://medium.com/@YatinBadal/rendering-and-serving-a-create-react-app-from-an-express-server-running-within-a-lambda-function-832576a5167e
+      - Then node & express using the video guide here https://www.youtube.com/watch?v=71cd5XerKss&t=131s because the freecodecamp guide was using something called Claudia and I want to reduce this to the smallest amount of packages. Article found here https://medium.freecodecamp.org/express-js-and-aws-lambda-a-serverless-love-story-7c77ba0eaa35
+  - Here we go with the CRA serverless.
