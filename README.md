@@ -344,3 +344,38 @@ I have to come up with a way to alternate between expensive listing for N dollar
      - Added admin access permission
      - Created new access key id
      - ran `serverless config credentials --provider aws --key AKIAIGDYWOMU3DBIQP3Q --secret *****`
+    - Ran `echo. > serverless.yml` to make our file
+    - Ran `npm i -S serverless-http express` to install express and serverless-http
+    - Ran `npm i -D webpack serverless-webpack serverless-offline webpack-node-externals` because 
+    >We also want to install the serverless-webpack plugin which will help use all the shiny new JS. The serverless-offline plugin will allow us to deploy our Serverless stack locally. We will use webpack-node-externals to exclude node_modules from our build.
+    - Copy pasted into serverless.yml 
+    ```
+    //serverless.yml
+
+    service: my-project
+    plugins:
+      - serverless-webpack
+      - serverless-offline
+    custom:
+      webpack:
+        webpackConfig: ./webpack.config.js
+        includeModules: true
+        packager: 'npm'
+    provider:
+      name: aws
+      runtime: nodejs8.10
+      stage: dev
+      region: eu-west-1
+    functions:
+      app:
+        handler: index.handler
+        events:
+          - http: ANY /
+          - http: 'ANY {proxy+}'
+          - cors: true
+    ```
+      - On first look this shows the path for the webpack config, which I assume is in node_modules. 
+        - After writing this I now realize we aren't going to be using react-scripts start anymore
+      - I updated `runtime: nodejs8.10` to nodejs10.14.1 and `region: eu-west-1` to us-east-1
+      - I see we have the index.handler and that's it. Also CORS is true which will save us headache. 
+    - Changing our index.js next. 
