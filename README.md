@@ -483,3 +483,11 @@ I have to come up with a way to alternate between expensive listing for N dollar
             | Error: Plugin/Preset files are not allowed to export objects, only functions. In C:\my_developments\lambda-pairbnb\node_modules\babel-preset-es2015\lib\index.js
           - Has something to do with @babel/core(babel7) and babel-core(babel6) but I am out of time. https://github.com/babel/babel/issues/8838
 
+## 2/14/19 thursday 9:00pm home
+  - Doing my timesheet. I think the babel issue comes from @babel/core and babel-core in between package json in pairbnb and in parent folder.
+
+## 2/15/19 Friday 8:00am home
+  - Taking a whack at the babel issue for 15 minutes.
+    - Ran `npm ls babel` to see what version I'm on. it shows --(empty)
+      ?? Not sure why it has this behavior. It should show everything in every folder recursively right?
+    | Running `npm ls @babel` gives an error Unhandled rejection Error: Invalid tag name "@babel": Tags may not have any characters that encodeURIComponent encodes. npm ERR! cb() never called!   npm ERR! This is an error with npm itself. Please report this error at:
