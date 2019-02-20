@@ -11,7 +11,6 @@ import Error from './components/Error'
 import jQuery from 'jquery'
 import SwitchWithSlide from './obnoxious-demo-for-react-router-animation-blog-post/src/SwitchWithSlide'
 
-require('dotenv').config()
 window.jQuery = jQuery
 
 class Container extends React.Component {
