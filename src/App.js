@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import './assets/css/main.css'
 import HeaderMenu from './components/headerMenu'
 import Contact from './components/contact'
@@ -11,9 +11,9 @@ import Error from './components/Error'
 import jQuery from 'jquery'
 import SwitchWithSlide from './obnoxious-demo-for-react-router-animation-blog-post/src/SwitchWithSlide'
 
-window.jQuery = jQuery
+global.jQuery = jQuery
 
-class Container extends React.Component {
+class App extends React.Component {
   render () {
     return (
       <React.Fragment>
@@ -32,11 +32,5 @@ class Container extends React.Component {
     )
   }
 };
-
-const App = () => (
-  <BrowserRouter>
-    <Container />
-  </BrowserRouter>
-)
 
 export default App
