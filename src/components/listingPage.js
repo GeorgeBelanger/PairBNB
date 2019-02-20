@@ -1,11 +1,19 @@
 import React from 'react'
-import Listings from '../listings'
 import { ApolloProvider } from 'react-apollo'
-import ApolloClient from 'apollo-boost'
+import { ApolloClient } from 'apollo-boost'
+import Listings from '../listings'
+import fetch from 'node-fetch'
+import { createHttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 
 const client = new ApolloClient({
-  uri: 'https://api.graph.cool/simple/v1/cjhupbfdv1msh0155lkixi5zx'
+  link: createHttpLink({
+    uri: 'https://api.graph.cool/simple/v1/cjhupbfdv1msh0155lkixi5zx',
+    fetch: fetch,
+  }),
+  cache: new InMemoryCache(),
 })
+
 
 const ListingPage = ({match}) => {
   return (
